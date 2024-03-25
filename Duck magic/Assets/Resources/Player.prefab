@@ -204,7 +204,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1132058b803485046aa960c9d23c5c0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _rigidbody: {fileID: 2321460010089042265}
   _speed: 5
   _jumpForce: 20
   _groundCheckPoint: {fileID: 2315084127512947986}
