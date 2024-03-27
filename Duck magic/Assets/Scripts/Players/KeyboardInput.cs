@@ -7,6 +7,7 @@ namespace Players
     public class KeyboardInput : MonoBehaviour
     {
         [SerializeField] private PhysicsMovement _movement;
+        [SerializeField] private PlayerAttack _playerAttack;
         [SerializeField] private KeyCode _right;
         [SerializeField] private KeyCode _left;
         [SerializeField] private KeyCode _jump;
@@ -30,6 +31,11 @@ namespace Players
                 else if (Input.GetKey(_left))
                 {
                     _movement.MoveLeft();
+                }
+
+                if (Input.GetKeyDown(_attack))
+                {
+                    _playerAttack.Attack();
                 }
 
                 if (Input.GetKeyDown(_jump))

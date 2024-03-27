@@ -1,5 +1,40 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4616528714213221820
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8857716213295833382}
+  m_Layer: 6
+  m_Name: ThrowPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &8857716213295833382
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4616528714213221820}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2315084127512947986}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0.252, y: 0.118}
+  m_SizeDelta: {x: 1, y: 1}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &8715964444649006852
 GameObject:
   m_ObjectHideFlags: 0
@@ -15,6 +50,7 @@ GameObject:
   - component: {fileID: 2321460010089042265}
   - component: {fileID: 1799646953279458572}
   - component: {fileID: 6928280231440424045}
+  - component: {fileID: 3913371304660942275}
   - component: {fileID: 7383836348593862567}
   - component: {fileID: 7021515411167729327}
   m_Layer: 6
@@ -35,7 +71,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 2}
   m_LocalScale: {x: 4.033708, y: 4.033708, z: 0.025594596}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 8857716213295833382}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -188,6 +225,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _movement: {fileID: 6928280231440424045}
+  _playerAttack: {fileID: 3913371304660942275}
   _right: 100
   _left: 97
   _jump: 32
@@ -210,7 +248,21 @@ MonoBehaviour:
   _groundCheckRadius: 1
   _whatIsGround:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 256
+--- !u!114 &3913371304660942275
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8715964444649006852}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 982d1c6fe52a27f4f854cc81ac4cbfa5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _bullet: {fileID: 4123759659218019493, guid: b63b3fe4a0d38d241ad6cc8a86500a45, type: 3}
+  _throwPoint: {fileID: 8857716213295833382}
 --- !u!114 &7383836348593862567
 MonoBehaviour:
   m_ObjectHideFlags: 0

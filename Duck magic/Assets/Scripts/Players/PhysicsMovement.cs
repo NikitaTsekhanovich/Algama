@@ -5,15 +5,14 @@ namespace Players
 {
     public class PhysicsMovement : MonoBehaviour
     {
-        // [SerializeField] private Rigidbody2D _rigidbody;
-        private Rigidbody2D _rigidbody;
-
         [SerializeField] private float _speed;
         [SerializeField] private float _jumpForce;
         
         [SerializeField] private Transform _groundCheckPoint;
         [SerializeField] private float _groundCheckRadius;
         [SerializeField] private LayerMask _whatIsGround;
+        
+        private Rigidbody2D _rigidbody;
         private bool _isGround;
 
         private void Start()
@@ -24,7 +23,6 @@ namespace Players
         public void MoveLeft()
         {
             _rigidbody.velocity = new Vector2(-_speed, _rigidbody.velocity.y);
-            // _rigidbody.velocity = new Vector2(-_speed, _rigidbody.velocity.y);
         }
         
         public void MoveRight()
