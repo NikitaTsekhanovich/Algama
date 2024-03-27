@@ -6,8 +6,11 @@ namespace Players
     public class MagicBall : MonoBehaviour
     {
         [SerializeField] private float _magicBallSpeed;
+        [SerializeField] private int _damage;
 
         private Rigidbody2D _rigidbody;
+        
+        public static Action<int> OnDamagePlayer;
 
         private void Start()
         {
@@ -21,6 +24,10 @@ namespace Players
 
         private void OnTriggerEnter2D(Collider2D other)
         {
+            if (other.gameObject.CompareTag("Player"))
+            {
+                OnDamagePlayer?.Invoke(_damage);
+            }
             Destroy(gameObject);
         }
     }
