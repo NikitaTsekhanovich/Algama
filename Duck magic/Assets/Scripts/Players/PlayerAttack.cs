@@ -1,4 +1,5 @@
 using UnityEngine;
+using Photon.Pun;
 
 namespace Players
 {
@@ -9,7 +10,7 @@ namespace Players
         
         public void Attack()
         {
-            Instantiate(_bullet, _throwPoint.position, _throwPoint.rotation);
+            PhotonNetwork.Instantiate(_bullet.name, _throwPoint.position, _throwPoint.rotation);
         }
     }
 }
