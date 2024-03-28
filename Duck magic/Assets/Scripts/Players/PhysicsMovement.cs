@@ -14,10 +14,12 @@ namespace Players
         
         private Rigidbody2D _rigidbody;
         private bool _isGround;
+        private SpriteRenderer _spriteRenderer;
 
         private void Start()
         {
             _rigidbody = gameObject.GetComponent<Rigidbody2D>();
+            _spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
         }
 
         public void MoveLeft()
@@ -42,14 +44,7 @@ namespace Players
 
         private void CheckDirectionMove()
         {
-            if (_rigidbody.velocity.x < 0)
-            {
-                transform.localScale = new Vector3(-3, 3, 1);
-            }
-            else if (_rigidbody.velocity.x > 0)
-            {
-                transform.localScale = new Vector3(3, 3, 1);
-            }
+            _spriteRenderer.flipX = !(_rigidbody.velocity.x > 0);
         }
     }
 }
