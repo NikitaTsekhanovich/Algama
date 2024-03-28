@@ -23,11 +23,13 @@ namespace Players
         public void MoveLeft()
         {
             _rigidbody.velocity = new Vector2(-_speed, _rigidbody.velocity.y);
+            CheckDirectionMove();
         }
         
         public void MoveRight()
         {
             _rigidbody.velocity = new Vector2(_speed, _rigidbody.velocity.y);
+            CheckDirectionMove();
         }
 
         public void Jump()
@@ -36,6 +38,18 @@ namespace Players
 
             if (_isGround)
                 _rigidbody.velocity = new Vector2(_rigidbody.velocity.x, _jumpForce);
+        }
+
+        private void CheckDirectionMove()
+        {
+            if (_rigidbody.velocity.x < 0)
+            {
+                transform.localScale = new Vector3(-3, 3, 1);
+            }
+            else if (_rigidbody.velocity.x > 0)
+            {
+                transform.localScale = new Vector3(3, 3, 1);
+            }
         }
     }
 }

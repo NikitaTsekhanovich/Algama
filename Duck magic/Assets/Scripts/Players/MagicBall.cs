@@ -7,7 +7,7 @@ namespace Players
     {
         [SerializeField] private float _magicBallSpeed;
         [SerializeField] private int _damage;
-
+        
         private Rigidbody2D _rigidbody;
         
         public static Action<int> OnDamagePlayer;
