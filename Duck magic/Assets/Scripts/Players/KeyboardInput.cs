@@ -8,11 +8,7 @@ namespace Players
     {
         [SerializeField] private PhysicsMovement _movement;
         [SerializeField] private PlayerAttack _playerAttack;
-        [SerializeField] private KeyCode _right;
-        [SerializeField] private KeyCode _left;
-        [SerializeField] private KeyCode _jump;
-        [SerializeField] private KeyCode _attack;
-        
+
         private PhotonView _view;
 
         private void Start()
@@ -24,21 +20,15 @@ namespace Players
         {
             if (_view.IsMine)
             {
-                if (Input.GetKey(_right))
-                {
-                    _movement.MoveRight();
-                }
-                else if (Input.GetKey(_left))
-                {
-                    _movement.MoveLeft();
-                }
+                var horizontalInput = Input.GetAxis(Axis.Horizontal);
+                _movement.Move(horizontalInput);
 
-                if (Input.GetKeyDown(_attack))
+                if (Input.GetKeyDown(KeyCode.F))
                 {
                     _playerAttack.Attack();
                 }
 
-                if (Input.GetKeyDown(_jump))
+                if (Input.GetKeyDown(KeyCode.Space))
                 {
                     _movement.Jump();
                 }

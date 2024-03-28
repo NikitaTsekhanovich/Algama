@@ -14,23 +14,19 @@ namespace Players
         
         private Rigidbody2D _rigidbody;
         private bool _isGround;
-        private SpriteRenderer _spriteRenderer;
-
+        private float _horizontalInput;
+        private Vector2 _moveVelocity;
+        
         private void Start()
         {
             _rigidbody = gameObject.GetComponent<Rigidbody2D>();
-            _spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
-        }
-
-        public void MoveLeft()
-        {
-            _rigidbody.velocity = new Vector2(-_speed, _rigidbody.velocity.y);
-            CheckDirectionMove();
         }
         
-        public void MoveRight()
+        public void Move(float horizontalInput)
         {
-            _rigidbody.velocity = new Vector2(_speed, _rigidbody.velocity.y);
+            _moveVelocity = Vector2.right * horizontalInput * _speed;
+            // _rigidbody.MovePosition(_rigidbody.position + _moveVelocity * Time.fixedDeltaTime);
+            _rigidbody.velocity = new Vector2(horizontalInput * _speed, _rigidbody.velocity.y);
             CheckDirectionMove();
         }
 
@@ -39,12 +35,22 @@ namespace Players
             _isGround = Physics2D.OverlapCircle(_groundCheckPoint.position, _groundCheckRadius, _whatIsGround);
 
             if (_isGround)
-                _rigidbody.velocity = new Vector2(_rigidbody.velocity.x, _jumpForce);
+            {
+                _rigidbody.AddForce(Vector2.up * _jumpForce);
+                // _rigidbody.velocity = new Vector2(_rigidbody.velocity.x, _jumpForce);
+            }
         }
 
         private void CheckDirectionMove()
         {
-            _spriteRenderer.flipX = !(_rigidbody.velocity.x > 0);
+            if (_moveVelocity.x > 0)
+            {
+                transform.localScale = new Vector3(3, 3, 0);
+            }
+            else if (_moveVelocity.x < 0)
+            {
+                transform.localScale = new Vector3(-3, 3, 0);
+            }
         }
     }
 }
