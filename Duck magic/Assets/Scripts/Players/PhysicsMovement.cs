@@ -17,7 +17,7 @@ namespace Players
         private float _horizontalInput;
         private Vector2 _moveVelocity;
         
-        private void Start()
+        private void Awake()
         {
             _rigidbody = gameObject.GetComponent<Rigidbody2D>();
         }

@@ -2,13 +2,21 @@ using Interfaces;
 using UnityEngine;
 using UnityEngine.UI;
 using Photon.Pun;
-using Photon.Pun.Demo.PunBasics;
 
 namespace Players
 {
     public class HealthHandler : MonoBehaviourPunCallbacks, IObserver, IPunObservable
     {
         [SerializeField] private Image _healthBar;
+        [SerializeField] private PhotonView _view;
+        
+        private float _health;
+
+        private void Start()
+        {
+            _health = _healthBar.fillAmount;
+            _view = GetComponent<PhotonView>();
+        }
 
         public void OnEnable()
         {
@@ -20,28 +28,24 @@ namespace Players
             MagicBall.OnDamagePlayer -= ChangeHealth;
         }
 
-        private void ChangeHealth(int damage)
+        private void ChangeHealth(int damage, int id)
         {
-            _healthBar.fillAmount -= damage / 100f;
+            if (_view.InstantiationId == id)
+            {
+                _health -= damage / 100f;
+                _healthBar.fillAmount = _health;
+            } 
         }
-
-        // [PunRPC]
-        // void GiveDamageRPC(int damage)
-        // {
-        //     _healthBar.fillAmount -= damage / 100f;
-        // }
 
         public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
         {
             if (stream.IsWriting)
             {
-                // We own this player: send the others our data
-                stream.SendNext(_healthBar.fillAmount);
+                stream.SendNext(_health);
             }
             else
             {
-                // Network player, receive data
-                _healthBar.fillAmount = (float)stream.ReceiveNext();
+                _health = (float)stream.ReceiveNext();
             }
         }
     }

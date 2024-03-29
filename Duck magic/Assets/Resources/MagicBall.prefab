@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7759298506652402021}
   - component: {fileID: 1923400955754734643}
   - component: {fileID: 1115871889037136567}
+  - component: {fileID: 4627918083158724049}
   m_Layer: 7
   m_Name: MagicBall
   m_TagString: Untagged
@@ -162,7 +163,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91ccdaa21f0ce1f499c2067cc63511bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _magicBallSpeed: 200
+  _magicBallSpeed: 250
   _damage: 10
 --- !u!114 &1115871889037136567
 MonoBehaviour:
@@ -182,7 +183,24 @@ MonoBehaviour:
   Synchronization: 3
   OwnershipTransfer: 0
   observableSearch: 2
-  ObservedComponents: []
+  ObservedComponents:
+  - {fileID: 4627918083158724049}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
+--- !u!114 &4627918083158724049
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4123759659218019493}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SynchronizePosition: 0
+  m_SynchronizeRotation: 0
+  m_SynchronizeScale: 1
+  m_UseLocal: 1

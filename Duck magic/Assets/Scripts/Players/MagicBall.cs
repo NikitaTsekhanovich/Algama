@@ -1,4 +1,5 @@
 using System;
+using Photon.Pun;
 using UnityEngine;
 
 namespace Players
@@ -10,7 +11,7 @@ namespace Players
         
         private Rigidbody2D _rigidbody;
         
-        public static Action<int> OnDamagePlayer;
+        public static Action<int, int> OnDamagePlayer;
 
         private void Start()
         {
@@ -28,7 +29,7 @@ namespace Players
             
             if (other.gameObject.CompareTag("Player"))
             {
-                OnDamagePlayer?.Invoke(_damage);
+                OnDamagePlayer?.Invoke(_damage, other.GetComponent<PhotonView>().InstantiationId);
             }
         }
     }

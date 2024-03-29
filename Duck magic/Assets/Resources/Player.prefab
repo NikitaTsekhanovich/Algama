@@ -108,8 +108,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.252, y: 0.118}
-  m_SizeDelta: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0.303, y: 0.139}
+  m_SizeDelta: {x: 0.0781, y: 0.0847}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &4722648236285346754
 GameObject:
@@ -123,6 +123,7 @@ GameObject:
   - component: {fileID: 175023560892283740}
   - component: {fileID: 3246328679175667876}
   - component: {fileID: 7426916234666521103}
+  - component: {fileID: 2362761287205742939}
   m_Layer: 6
   m_Name: CurrentHealth
   m_TagString: Untagged
@@ -200,6 +201,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _healthBar: {fileID: 3246328679175667876}
+  _view: {fileID: 2362761287205742939}
+--- !u!114 &2362761287205742939
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4722648236285346754}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents:
+  - {fileID: 7426916234666521103}
+  sceneViewId: 0
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1 &7526574752268172826
 GameObject:
   m_ObjectHideFlags: 0
@@ -350,12 +375,10 @@ GameObject:
   - component: {fileID: 3335118007151572366}
   - component: {fileID: 2321460010089042265}
   - component: {fileID: 3667270624806308486}
-  - component: {fileID: 5483265410284983594}
   - component: {fileID: 1799646953279458572}
   - component: {fileID: 6928280231440424045}
   - component: {fileID: 3913371304660942275}
   - component: {fileID: 7383836348593862567}
-  - component: {fileID: 7021515411167729327}
   - component: {fileID: 9222196410811229422}
   m_Layer: 6
   m_Name: Player
@@ -508,19 +531,6 @@ CapsuleCollider2D:
   m_Offset: {x: -0.017547607, y: 0.029251099}
   m_Size: {x: 0.2800293, y: 0.5491435}
   m_Direction: 0
---- !u!114 &5483265410284983594
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8715964444649006852}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2fe843db7b55c5f45822629d39a500ae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _healthBar: {fileID: 3246328679175667876}
 --- !u!114 &1799646953279458572
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -548,7 +558,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 5
-  _jumpForce: 200
+  _jumpForce: 250
   _groundCheckPoint: {fileID: 3505866253779370383}
   _groundCheckRadius: 0.5
   _whatIsGround:
@@ -587,46 +597,10 @@ MonoBehaviour:
   OwnershipTransfer: 0
   observableSearch: 2
   ObservedComponents:
-  - {fileID: 5483265410284983594}
-  - {fileID: 7021515411167729327}
   - {fileID: 9222196410811229422}
-  - {fileID: 7426916234666521103}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
---- !u!114 &7021515411167729327
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8715964444649006852}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8efc6b1d64977384eb3405357896c656, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_PositionModel:
-    SynchronizeEnabled: 1
-    TeleportEnabled: 1
-    TeleportIfDistanceGreaterThan: 0
-    InterpolateOption: 3
-    InterpolateMoveTowardsSpeed: 1
-    InterpolateLerpSpeed: 1
-    ExtrapolateOption: 1
-    ExtrapolateSpeed: 1
-    ExtrapolateIncludingRoundTripTime: 1
-    ExtrapolateNumberOfStoredPositions: 1
-  m_RotationModel:
-    SynchronizeEnabled: 1
-    InterpolateOption: 1
-    InterpolateRotateTowardsSpeed: 180
-    InterpolateLerpSpeed: 5
-  m_ScaleModel:
-    SynchronizeEnabled: 1
-    InterpolateOption: 0
-    InterpolateMoveTowardsSpeed: 1
-    InterpolateLerpSpeed: 0
 --- !u!114 &9222196410811229422
 MonoBehaviour:
   m_ObjectHideFlags: 0
