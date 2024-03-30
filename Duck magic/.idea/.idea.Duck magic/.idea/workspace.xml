@@ -1,19 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9d3428c6-8c54-4e21-ac17-0c6f6b526172" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Duck magic/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Duck magic/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Images/Simasart/Hungry Bat/Fonts/TMP/gomarice_rocks_white_outline.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Images/Simasart/Hungry Bat/Fonts/TMP/gomarice_rocks_white_outline.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Images/Simasart/Hungry Bat/Fonts/TMP/gomarice_rocks_yellow_outline_small.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Images/Simasart/Hungry Bat/Fonts/TMP/gomarice_rocks_yellow_outline_small.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Player.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/LoadingScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/LoadingScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Menu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Menu.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Menu/MenuManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Menu/MenuManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Server/ConnectToServer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Server/ConnectToServer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Anton SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Anton SDF.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Bangers SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Bangers SDF.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Electronic Highway Sign SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Electronic Highway Sign SDF.asset" afterDir="false" />
-    </list>
+    <list default="true" id="9d3428c6-8c54-4e21-ac17-0c6f6b526172" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -115,7 +103,7 @@
       <workItem from="1711632280066" duration="5895000" />
       <workItem from="1711690689501" duration="7328000" />
       <workItem from="1711787633225" duration="2299000" />
-      <workItem from="1711798624832" duration="10307000" />
+      <workItem from="1711798624832" duration="10642000" />
     </task>
     <servers />
   </component>
