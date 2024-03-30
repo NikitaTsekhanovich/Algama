@@ -34,7 +34,7 @@ namespace Players
             {
                 _health -= damage / 100f;
                 _healthBar.fillAmount = _health;
-            } 
+            }
         }
 
         public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)

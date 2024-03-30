@@ -25,7 +25,6 @@ namespace Players
         public void Move(float horizontalInput)
         {
             _moveVelocity = Vector2.right * horizontalInput * _speed;
-            // _rigidbody.MovePosition(_rigidbody.position + _moveVelocity * Time.fixedDeltaTime);
             _rigidbody.velocity = new Vector2(horizontalInput * _speed, _rigidbody.velocity.y);
             CheckDirectionMove();
         }
@@ -37,7 +36,6 @@ namespace Players
             if (_isGround)
             {
                 _rigidbody.AddForce(Vector2.up * _jumpForce);
-                // _rigidbody.velocity = new Vector2(_rigidbody.velocity.x, _jumpForce);
             }
         }
 
