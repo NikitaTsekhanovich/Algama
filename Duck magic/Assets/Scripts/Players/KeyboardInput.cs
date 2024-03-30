@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using Photon.Pun;
 
@@ -8,17 +7,11 @@ namespace Players
     {
         [SerializeField] private PhysicsMovement _movement;
         [SerializeField] private PlayerAttack _playerAttack;
-
-        private PhotonView _view;
-
-        private void Start()
-        {
-            _view = GetComponent<PhotonView>();
-        }
+        [SerializeField] private SettingPlayerNetwork _settingPlayerNetwork;
 
         private void Update()
         {
-            if (_view.IsMine)
+            if (_settingPlayerNetwork.View.IsMine)
             {
                 var horizontalInput = Input.GetAxis(Axis.Horizontal);
                 _movement.Move(horizontalInput);

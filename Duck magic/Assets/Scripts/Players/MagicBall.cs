@@ -23,14 +23,15 @@ namespace Players
             _rigidbody.velocity = new Vector2(_magicBallSpeed * transform.localScale.x, 0);
         }
 
-        private void OnTriggerEnter2D(Collider2D other)
+        private void OnTriggerEnter2D(Collider2D coll)
         {
-            Destroy(gameObject);
-            
-            if (other.gameObject.CompareTag("Player"))
+            if (coll.gameObject.CompareTag("Player"))
             {
-                OnDamagePlayer?.Invoke(_damage, other.GetComponent<PhotonView>().InstantiationId);
+                Debug.Log($"Name: {coll.GetComponent<PhotonView>().name}");
+                OnDamagePlayer?.Invoke(_damage, coll.GetComponent<PhotonView>().InstantiationId);
             }
+            
+            Destroy(gameObject);
         }
     }
 }

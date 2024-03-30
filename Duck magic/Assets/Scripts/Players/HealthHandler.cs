@@ -5,17 +5,16 @@ using Photon.Pun;
 
 namespace Players
 {
-    public class HealthHandler : MonoBehaviourPunCallbacks, IObserver, IPunObservable
+    public class HealthHandler : MonoBehaviourPunCallbacks, IObserver
     {
         [SerializeField] private Image _healthBar;
-        [SerializeField] private PhotonView _view;
+        [SerializeField] private SettingPlayerNetwork _settingPlayerNetwork;
         
         private float _health;
 
         private void Start()
         {
             _health = _healthBar.fillAmount;
-            _view = GetComponent<PhotonView>();
         }
 
         public void OnEnable()
@@ -30,22 +29,10 @@ namespace Players
 
         private void ChangeHealth(int damage, int id)
         {
-            if (_view.InstantiationId == id)
+            if (_settingPlayerNetwork.View.InstantiationId == id)
             {
                 _health -= damage / 100f;
                 _healthBar.fillAmount = _health;
-            }
-        }
-
-        public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
-        {
-            if (stream.IsWriting)
-            {
-                stream.SendNext(_health);
-            }
-            else
-            {
-                _health = (float)stream.ReceiveNext();
             }
         }
     }
