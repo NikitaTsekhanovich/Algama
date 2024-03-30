@@ -16,7 +16,7 @@ namespace Players
             _view = GetComponent<PhotonView>();
         }
 
-        private void FixedUpdate()
+        private void Update()
         {
             if (_view.IsMine)
             {

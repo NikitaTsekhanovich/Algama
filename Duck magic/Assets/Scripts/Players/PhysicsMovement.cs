@@ -1,5 +1,7 @@
 using System;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Players
 {
@@ -11,6 +13,9 @@ namespace Players
         [SerializeField] private Transform _groundCheckPoint;
         [SerializeField] private float _groundCheckRadius;
         [SerializeField] private LayerMask _whatIsGround;
+        
+        [SerializeField] private Image _playerHealth;
+        [SerializeField] private TMP_Text _playerName;
         
         private Rigidbody2D _rigidbody;
         private bool _isGround;
@@ -44,10 +49,14 @@ namespace Players
             if (_moveVelocity.x > 0)
             {
                 transform.localScale = new Vector3(3, 3, 0);
+                _playerHealth.transform.localScale = new Vector3(1, 1, 0);
+                _playerName.transform.localScale = new Vector3(1, 1, 0);
             }
             else if (_moveVelocity.x < 0)
             {
                 transform.localScale = new Vector3(-3, 3, 0);
+                _playerHealth.transform.localScale = new Vector3(-1, 1, 0);
+                _playerName.transform.localScale = new Vector3(-1, 1, 0);
             }
         }
     }

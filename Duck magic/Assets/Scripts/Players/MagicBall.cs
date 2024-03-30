@@ -18,7 +18,7 @@ namespace Players
             _rigidbody = GetComponent<Rigidbody2D>();
         }
 
-        private void FixedUpdate()
+        private void Update()
         {
             _rigidbody.velocity = new Vector2(_magicBallSpeed * transform.localScale.x, 0);
         }
