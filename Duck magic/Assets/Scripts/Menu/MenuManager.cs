@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using Photon.Pun;
@@ -13,10 +14,25 @@ namespace Menu
         [SerializeField] private TMP_InputField _joinInput;
         [SerializeField] private TMP_InputField _playerNameInput;
 
+        [SerializeField] private Transform _content;
+        [SerializeField] private LobbyRoom _listLobby;
+
         private void Start()
         {
             _playerNameInput.text = PlayerPrefs.GetString("name");
             PhotonNetwork.NickName = _playerNameInput.text;
+        }
+
+        public override void OnRoomListUpdate(List<RoomInfo> roomList)
+        {
+            foreach (var room in roomList)
+            {
+                var listItem = Instantiate(_listLobby, _content);
+                if (listItem != null)
+                {
+                    listItem.SetInfo(room);
+                }
+            }
         }
 
         public void CreateRoom()
