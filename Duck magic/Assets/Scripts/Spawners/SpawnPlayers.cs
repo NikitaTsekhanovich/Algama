@@ -14,7 +14,7 @@ namespace Spawners
 
         private void Start()
         {
-            var randomPosition = new Vector3(Random.Range(_minX, _minY), Random.Range(_maxX, _maxY), 2);
+            var randomPosition = new Vector3(Random.Range(_minX, _maxX), Random.Range(_minY, _maxY), 2);
             var newPLayer = PhotonNetwork.Instantiate(_player.name, randomPosition, Quaternion.identity);
             _cinemachineVirtual.Follow = newPLayer.transform;
         }

@@ -1,11 +1,9 @@
-using System;
-using TMPro;
+using Photon.Pun;
 using UnityEngine;
-using UnityEngine.UI;
 
 namespace Players
 {
-    public class PhysicsMovement : MonoBehaviour
+    public class PhysicsMovement : MonoBehaviourPun, IPunObservable
     {
         [SerializeField] private float _speed;
         [SerializeField] private float _jumpForce;
@@ -14,24 +12,30 @@ namespace Players
         [SerializeField] private float _groundCheckRadius;
         [SerializeField] private LayerMask _whatIsGround;
         
-        [SerializeField] private Image _playerHealth;
-        [SerializeField] private TMP_Text _playerName;
-        
-        private Rigidbody2D _rigidbody;
+        [SerializeField] private SpriteRenderer _spriteRenderer;
+
         private bool _isGround;
-        private float _horizontalInput;
-        private Vector2 _moveVelocity;
+        private Vector3 _smooth;
+        private Rigidbody2D _rigidbody;
+
+        public SpriteRenderer SpriteRendererPlayer => _spriteRenderer;
         
-        private void Awake()
+        private void Start()
         {
+            PhotonNetwork.SendRate = 20;
+            PhotonNetwork.SerializationRate = 15;
             _rigidbody = gameObject.GetComponent<Rigidbody2D>();
         }
-        
-        public void Move(float horizontalInput)
+
+        public void ProcessInput()
         {
-            _moveVelocity = Vector2.right * horizontalInput * _speed;
-            _rigidbody.velocity = new Vector2(horizontalInput * _speed, _rigidbody.velocity.y);
-            CheckDirectionMove();
+            var move = new Vector3(Input.GetAxisRaw(Axis.Horizontal), 0);
+            transform.position += move * _speed * Time.deltaTime;
+        }
+
+        public void SmoothMovement()
+        {
+            transform.position = Vector3.Lerp(transform.position, _smooth, Time.deltaTime * 10);
         }
 
         public void Jump()
@@ -40,23 +44,32 @@ namespace Players
 
             if (_isGround)
             {
-                _rigidbody.AddForce(Vector2.up * _jumpForce);
+                _rigidbody.AddForce(Vector2.up * _jumpForce, ForceMode2D.Impulse);
+                // _rigidbody.velocity = Vector2.up * _jumpForce;
             }
         }
 
-        private void CheckDirectionMove()
+        public void CheckDirectionMove(bool isLeft, PhotonView view)
         {
-            if (_moveVelocity.x > 0)
+            _spriteRenderer.flipX = isLeft;
+            view.RPC("OnDirectionChange", RpcTarget.AllBuffered, isLeft);
+        }
+
+        [PunRPC]
+        private void OnDirectionChange(bool isRight)
+        {
+            _spriteRenderer.flipX = isRight;
+        }
+        
+        public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+        {
+            if (stream.IsWriting)
             {
-                transform.localScale = new Vector3(3, 3, 0);
-                _playerHealth.transform.localScale = new Vector3(1, 1, 0);
-                _playerName.transform.localScale = new Vector3(1, 1, 0);
+                stream.SendNext(transform.position);
             }
-            else if (_moveVelocity.x < 0)
+            else if (stream.IsReading)
             {
-                transform.localScale = new Vector3(-3, 3, 0);
-                _playerHealth.transform.localScale = new Vector3(-1, 1, 0);
-                _playerName.transform.localScale = new Vector3(-1, 1, 0);
+                _smooth = (Vector3)stream.ReceiveNext();
             }
         }
     }

@@ -1,11 +1,10 @@
 using Interfaces;
 using UnityEngine;
 using UnityEngine.UI;
-using Photon.Pun;
 
 namespace Players
 {
-    public class HealthHandler : MonoBehaviourPunCallbacks, IObserver
+    public class HealthHandler : MonoBehaviour, IObserver
     {
         [SerializeField] private Image _healthBar;
         [SerializeField] private SettingPlayerNetwork _settingPlayerNetwork;
@@ -27,7 +26,7 @@ namespace Players
             MagicBall.OnDamagePlayer -= ChangeHealth;
         }
 
-        private void ChangeHealth(int damage, int id)
+        private void ChangeHealth(float damage, int id)
         {
             if (_settingPlayerNetwork.View.InstantiationId == id)
             {

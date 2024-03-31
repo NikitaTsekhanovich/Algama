@@ -6,14 +6,21 @@ namespace Players
     public class PlayerAttack : MonoBehaviour
     {
         [SerializeField] private GameObject _bullet;
-        [SerializeField] private Transform _throwPoint;
-        
+        [SerializeField] private Transform _throwPointRight;
+        [SerializeField] private Transform _throwPointLeft;
+        [SerializeField] private PhysicsMovement _physicsMovement;
+
         public void Attack()
         {
-            var newMagicBall = PhotonNetwork.Instantiate(_bullet.name, _throwPoint.position, _throwPoint.rotation);
-            
-            newMagicBall.transform.localScale = new Vector3(
-                0.04f * Mathf.Sign(transform.localScale.x), 0.3f, 0);
+            if (_physicsMovement.SpriteRendererPlayer.flipX)
+            {
+                var newMagicBall = PhotonNetwork.Instantiate(_bullet.name, _throwPointLeft.position, _throwPointRight.rotation);
+                newMagicBall.GetComponent<PhotonView>().RPC("OnChangeDirection", RpcTarget.AllBuffered);
+            }
+            else
+            {
+                PhotonNetwork.Instantiate(_bullet.name, _throwPointRight.position, _throwPointRight.rotation);
+            }
         }
     }
 }

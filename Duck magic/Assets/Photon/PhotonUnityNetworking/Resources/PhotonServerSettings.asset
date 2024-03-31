@@ -42,6 +42,10 @@ MonoBehaviour:
   - GiveDamageRPC
   - SyncHPBeta
   - TakeDamage
+  - OnDirectionChange
+  - OnChangeDirection
+  - OnDestroyMagicBall
+  - OnShowHealthBar
   DisableAutoOpenWizard: 1
   ShowSettings: 0
   DevRegionSetOnce: 1

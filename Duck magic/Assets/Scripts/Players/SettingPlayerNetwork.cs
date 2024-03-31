@@ -14,19 +14,10 @@ namespace Players
 
         public PhotonView View => _view;
 
-        [SerializeField] private Image _healthBar;
-        
-        private float _health;
-
         private void Awake()
         {
             _view = GetComponent<PhotonView>();
             _playerName.text = _view.Owner.NickName;
-        }
-
-        private void Start()
-        {
-            _health = _healthBar.fillAmount;
         }
     }
 }

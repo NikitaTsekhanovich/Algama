@@ -4,34 +4,41 @@ using UnityEngine;
 
 namespace Players
 {
-    public class MagicBall : MonoBehaviour
+    public class MagicBall : MonoBehaviourPun
     {
         [SerializeField] private float _magicBallSpeed;
-        [SerializeField] private int _damage;
+        [SerializeField] private float _damage;
         
-        private Rigidbody2D _rigidbody;
+        private bool _isLeftDirection;
         
-        public static Action<int, int> OnDamagePlayer;
-
-        private void Start()
-        {
-            _rigidbody = GetComponent<Rigidbody2D>();
-        }
+        public static Action<float, int> OnDamagePlayer;
 
         private void Update()
         {
-            _rigidbody.velocity = new Vector2(_magicBallSpeed * transform.localScale.x, 0);
+            if (!_isLeftDirection)
+            {
+                transform.Translate(Vector2.right * Time.deltaTime * _magicBallSpeed);
+            }
+            else
+            {
+                transform.Translate(Vector3.left * Time.deltaTime * _magicBallSpeed);
+            }
         }
 
         private void OnTriggerEnter2D(Collider2D coll)
         {
             if (coll.gameObject.CompareTag("Player"))
             {
-                Debug.Log($"Name: {coll.GetComponent<PhotonView>().name}");
                 OnDamagePlayer?.Invoke(_damage, coll.GetComponent<PhotonView>().InstantiationId);
             }
             
             Destroy(gameObject);
+        }
+
+        [PunRPC]
+        private void OnChangeDirection()
+        {
+            _isLeftDirection = true;
         }
     }
 }

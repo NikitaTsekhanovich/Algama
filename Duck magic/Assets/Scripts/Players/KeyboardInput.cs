@@ -1,5 +1,4 @@
 using UnityEngine;
-using Photon.Pun;
 
 namespace Players
 {
@@ -13,9 +12,15 @@ namespace Players
         {
             if (_settingPlayerNetwork.View.IsMine)
             {
-                var horizontalInput = Input.GetAxis(Axis.Horizontal);
-                _movement.Move(horizontalInput);
-
+                if (Input.GetKeyDown(KeyCode.D))
+                {
+                    _movement.CheckDirectionMove(false, _settingPlayerNetwork.View);
+                }
+                else if (Input.GetKeyDown(KeyCode.A))
+                {
+                    _movement.CheckDirectionMove(true, _settingPlayerNetwork.View);
+                }
+                
                 if (Input.GetKeyDown(KeyCode.F))
                 {
                     _playerAttack.Attack();
@@ -25,6 +30,19 @@ namespace Players
                 {
                     _movement.Jump();
                 }
+            }
+      
+        }
+
+        private void FixedUpdate()
+        {
+            if (_settingPlayerNetwork.View.IsMine)
+            {
+                _movement.ProcessInput();
+            }
+            else
+            {
+                _movement.SmoothMovement();
             }
         }
     }
