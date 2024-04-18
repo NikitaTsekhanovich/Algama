@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using Photon.Pun;
 using TMPro;
@@ -10,6 +9,7 @@ namespace Server
     {
         [SerializeField] private TMP_InputField _playerNameInput;
         [SerializeField] private TMP_Text _buttonText;
+        [SerializeField] private ValidationPlayerData _validationPlayerData;
 
         private void Start()
         {
@@ -19,28 +19,20 @@ namespace Server
 
         public void OnClickConnect()
         {
-            CheckNameInput(_playerNameInput.text.Length != 0);
-            _buttonText.text = "Connecting...";
-            PhotonNetwork.ConnectUsingSettings();
+            var isCorrectPlayerName = _validationPlayerData.IsCorrectPlayerName(_playerNameInput.text);
+
+            if (isCorrectPlayerName)
+            {
+                _buttonText.text = "Connecting...";
+                PhotonNetwork.ConnectUsingSettings();
+            }
         }
         
         public override void OnConnectedToMaster()
         {
             PhotonNetwork.JoinLobby();
+            PhotonNetwork.AutomaticallySyncScene = true;
             SceneManager.LoadScene("Menu");
-        }
-
-        private void CheckNameInput(bool isCorrectInput)
-        {
-            if (isCorrectInput)
-            {
-                PlayerPrefs.SetString("name", _playerNameInput.text);
-                PhotonNetwork.NickName = _playerNameInput.text;
-            }
-            else
-            {
-                PhotonNetwork.NickName = "Anonymous 228";
-            }
         }
     }
 }

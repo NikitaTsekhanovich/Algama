@@ -62,11 +62,11 @@ namespace Photon.Pun.Demo.Asteroids
             this.SetActivePanel(SelectionPanel.name);
         }
 
-        public override void OnRoomListUpdate(List<RoomInfo> roomList)
+        public override void OnRoomListUpdate(List<RoomInfo> currentRoomList)
         {
             ClearRoomListView();
 
-            UpdateCachedRoomList(roomList);
+            UpdateCachedRoomList(currentRoomList);
             UpdateRoomListView();
         }
 

@@ -4,8 +4,27 @@
     <list default="true" id="9d3428c6-8c54-4e21-ac17-0c6f6b526172" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Duck magic/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Duck magic/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Images/Simasart/Hungry Bat/Fonts/TMP/gomarice_rocks.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Images/Simasart/Hungry Bat/Fonts/TMP/gomarice_rocks.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Images/Simasart/Hungry Bat/Fonts/TMP/gomarice_rocks_white_outline.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Images/Simasart/Hungry Bat/Fonts/TMP/gomarice_rocks_white_outline.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Images/Simasart/Hungry Bat/Fonts/TMP/gomarice_rocks_yellow_outline_big.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Images/Simasart/Hungry Bat/Fonts/TMP/gomarice_rocks_yellow_outline_big.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Images/Simasart/Hungry Bat/Fonts/TMP/gomarice_rocks_yellow_outline_small.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Images/Simasart/Hungry Bat/Fonts/TMP/gomarice_rocks_yellow_outline_small.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Photon/PhotonRealtime/Code/LoadBalancingClient.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Photon/PhotonRealtime/Code/LoadBalancingClient.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Photon/PhotonRealtime/Code/SupportLogger.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Photon/PhotonRealtime/Code/SupportLogger.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Photon/PhotonRealtime/Demos/DemoLoadBalancing/ConnectAndJoinRandomLb.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Photon/PhotonRealtime/Demos/DemoLoadBalancing/ConnectAndJoinRandomLb.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Photon/PhotonUnityNetworking/Code/PunClasses.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Photon/PhotonUnityNetworking/Code/PunClasses.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Photon/PhotonUnityNetworking/Demos/DemoAsteroids/Scripts/Lobby/LobbyMainPanel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Photon/PhotonUnityNetworking/Demos/DemoAsteroids/Scripts/Lobby/LobbyMainPanel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/Lists/RoomListView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/Lists/RoomListView.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefab/ButtonRoom.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefab/ButtonRoom.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/MagicBall.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/MagicBall.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Resources/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Player.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/LoadingScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/LoadingScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Menu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Menu.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Menu/LobbyRoom.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Menu/LobbyRoom.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Menu/MenuManager.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Menu/MenuManager.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Server/ConnectToServer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Server/ConnectToServer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Electronic Highway Sign SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Electronic Highway Sign SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2022.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2022.dwlt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -15,12 +34,11 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Interfaces/IObserver.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Menu/LobbyRoom.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Menu/MenuManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Players/HealthHandler.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Players/MagicBall.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Players/SettingPlayerNetwork.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Server/ConnectToServer.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Server/ValidationPlayerData.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Spawners/SpawnPlayers.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -113,6 +131,11 @@
       <workItem from="1711865864004" duration="29913000" />
       <workItem from="1712481990998" duration="2144000" />
       <workItem from="1713198295323" duration="586000" />
+      <workItem from="1713257027331" duration="11139000" />
+      <workItem from="1713285146817" duration="10990000" />
+      <workItem from="1713349654531" duration="21334000" />
+      <workItem from="1713425302427" duration="5185000" />
+      <workItem from="1713449442681" duration="5253000" />
     </task>
     <servers />
   </component>

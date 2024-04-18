@@ -57,15 +57,15 @@ namespace Photon.Pun.Demo.Cockpit
             OnJoinRoom.Invoke(roomName);
         }
 
-        public override void OnRoomListUpdate(List<RoomInfo> roomList)
+        public override void OnRoomListUpdate(List<RoomInfo> currentRoomList)
         {
 			UpdateStatusText.text = "Updated";
 
-			if (roomList.Count == 0 && !PhotonNetwork.InLobby) {
+			if (currentRoomList.Count == 0 && !PhotonNetwork.InLobby) {
 				ContentFeedback.text = "No Room found in lobby "+LobbyNameInputField.text+" Matching: "+SqlQueryInputField.text;
 			}
 		
-            foreach (RoomInfo entry in roomList)
+            foreach (RoomInfo entry in currentRoomList)
             {
                 if (roomCellList.ContainsKey(entry.Name))
                 {
