@@ -7,6 +7,7 @@ namespace Menu.MenuHandlers
     {
         public void StartGame()
         {
+            PhotonNetwork.CurrentRoom.IsOpen = false;
             PhotonNetwork.LoadLevel("Game");
         }
         

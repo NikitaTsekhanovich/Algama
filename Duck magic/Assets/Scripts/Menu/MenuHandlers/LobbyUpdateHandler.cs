@@ -24,7 +24,8 @@ namespace Menu.MenuHandlers
             {
                 if (currentRoom.IsOpen &&
                     currentRoom.IsVisible &&
-                    currentRoom.PlayerCount > 0)
+                    currentRoom.PlayerCount > 0 &&
+                    currentRoom.PlayerCount < currentRoom.MaxPlayers)
                 {
                     var newRoom = Instantiate(_roomListItem, _contentLobby);
                     newRoom.SetInfo(currentRoom);

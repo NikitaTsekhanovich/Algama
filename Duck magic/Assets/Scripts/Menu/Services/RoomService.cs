@@ -12,8 +12,7 @@ namespace Menu.Services
         
         [SerializeField] private GameObject _lobby;
         [SerializeField] private GameObject _room;
-        
-                
+
         [SerializeField] private TMP_InputField _createRoomInput;
         [SerializeField] private ValidationRoomData _validationRoomData;
         
@@ -29,7 +28,7 @@ namespace Menu.Services
         public void CreateRoom()
         {
             var roomOptions = new RoomOptions();
-            roomOptions.MaxPlayers = 4;
+            roomOptions.MaxPlayers = 2;
           
             if (!_validationRoomData.IsCorrectRoomName(_createRoomInput.text))
             {
@@ -43,22 +42,37 @@ namespace Menu.Services
         
         public override void OnCreateRoomFailed(short returnCode, string message)
         {
-            Debug.Log(returnCode);
-            Debug.Log(message);
+            Debug.Log($"Error create room: {returnCode}");
+            Debug.Log($"Error create room: {message}");
+            // _room.SetActive(false);
+            // открыть кнопки и вывести ошибку, что комната уже создана
+        }
+        
+        public override void OnCreatedRoom()
+        {
+            
+        }
+
+        public override void OnJoinRoomFailed(short returnCode, string message)
+        {
+            Debug.Log($"Error join room: {returnCode}");
+            Debug.Log($"Error join room: {message}");
+        }
+        
+        public override void OnJoinedRoom()
+        {
+            _lobby.SetActive(false);
+            _room.SetActive(true);
         }
         
         public void JoinRoom(RoomInfo roomInfo)
         {
-            _lobby.SetActive(false);
-            _room.SetActive(true);
             _roomTitle.text = roomInfo.Name;
             PhotonNetwork.JoinRoom(roomInfo.Name);
         }
         
         public void JoinRoomId()
         {
-            _lobby.SetActive(false);
-            _room.SetActive(true);
             _roomTitle.text = _joinRoomInput.text;
             PhotonNetwork.JoinRoom(_joinRoomInput.text);
         }
