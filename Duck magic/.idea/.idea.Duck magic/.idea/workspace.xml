@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9d3428c6-8c54-4e21-ac17-0c6f6b526172" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Duck magic/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Duck magic/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Menu/MenuHandlers/LobbyUpdateHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Menu/MenuHandlers/LobbyUpdateHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Menu/MenuHandlers/MenuHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Menu/MenuHandlers/MenuHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Menu/Services/RoomService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Menu/Services/RoomService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2022.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2022.dwlt" afterDir="false" />
-    </list>
+    <list default="true" id="9d3428c6-8c54-4e21-ac17-0c6f6b526172" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -119,6 +113,7 @@
       <workItem from="1713425302427" duration="5185000" />
       <workItem from="1713449442681" duration="6117000" />
       <workItem from="1713461918549" duration="7484000" />
+      <workItem from="1713532268810" duration="469000" />
     </task>
     <servers />
   </component>
