@@ -3,14 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="9d3428c6-8c54-4e21-ac17-0c6f6b526172" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Duck magic/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Duck magic/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Images/2D_Handpainted_Magical_Rocks_and_Stones/Prefabs/Blue/Magical_Rock_4.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Images/2D_Handpainted_Magical_Rocks_and_Stones/Prefabs/Blue/Magical_Rock_4.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Images/2D_Handpainted_Magical_Rocks_and_Stones/Prefabs/Blue/Magical_Rock_7.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Images/2D_Handpainted_Magical_Rocks_and_Stones/Prefabs/Blue/Magical_Rock_7.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Images/Simasart/Hungry Bat/Fonts/TMP/gomarice_rocks.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Images/Simasart/Hungry Bat/Fonts/TMP/gomarice_rocks.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Game.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Game.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameObjects/MagicStones/HealerStone.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameObjects/MagicStones/HealerStone.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Players/HealthHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Players/HealthHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Players/MagicBall.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Players/MagicBall.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2022.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2022.dwlt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -119,6 +118,7 @@
       <workItem from="1711865864004" duration="29913000" />
       <workItem from="1712481990998" duration="2144000" />
       <workItem from="1713198295323" duration="586000" />
+      <workItem from="1713867795876" duration="6561000" />
     </task>
     <servers />
   </component>

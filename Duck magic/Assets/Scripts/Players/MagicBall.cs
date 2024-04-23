@@ -31,8 +31,11 @@ namespace Players
             {
                 OnDamagePlayer?.Invoke(_damage, coll.GetComponent<PhotonView>().InstantiationId);
             }
-            
-            Destroy(gameObject);
+
+            if (!coll.gameObject.CompareTag("Field"))
+            {
+                Destroy(gameObject);
+            }
         }
 
         [PunRPC]

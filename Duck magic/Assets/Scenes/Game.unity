@@ -944,6 +944,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 620581285}
     m_Modifications:
+    - target: {fileID: -1565389155815104684, guid: af871de2336ed504693209cca0288a85, type: 3}
+      propertyPath: _settingPlayerNetwork
+      value: 
+      objectReference: {fileID: 8652689301091883203, guid: 61c0dde5b8c725344846f3523bf8fc3b, type: 3}
     - target: {fileID: 2422180236735686614, guid: af871de2336ed504693209cca0288a85, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.40082845
@@ -1011,6 +1015,10 @@ PrefabInstance:
     - target: {fileID: 7543273736109187787, guid: af871de2336ed504693209cca0288a85, type: 3}
       propertyPath: m_Offset.y
       value: 0.07890985
+      objectReference: {fileID: 0}
+    - target: {fileID: 8569790738080549971, guid: af871de2336ed504693209cca0288a85, type: 3}
+      propertyPath: m_TagString
+      value: Field
       objectReference: {fileID: 0}
     - target: {fileID: 8569790739777298293, guid: af871de2336ed504693209cca0288a85, type: 3}
       propertyPath: m_Name
@@ -2578,10 +2586,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 620581285}
     m_Modifications:
+    - target: {fileID: 704637194733059717, guid: 08ada9b58db31644e97f9a391a1ab829, type: 3}
+      propertyPath: m_TagString
+      value: Field
+      objectReference: {fileID: 0}
     - target: {fileID: 704637196400176547, guid: 08ada9b58db31644e97f9a391a1ab829, type: 3}
       propertyPath: m_Name
       value: Magical_Rock_7
       objectReference: {fileID: 0}
+    - target: {fileID: 5984511269889160594, guid: 08ada9b58db31644e97f9a391a1ab829, type: 3}
+      propertyPath: _settingPlayerNetwork
+      value: 
+      objectReference: {fileID: 8652689301091883203, guid: 61c0dde5b8c725344846f3523bf8fc3b, type: 3}
     - target: {fileID: 6844259030529751779, guid: 08ada9b58db31644e97f9a391a1ab829, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.7469

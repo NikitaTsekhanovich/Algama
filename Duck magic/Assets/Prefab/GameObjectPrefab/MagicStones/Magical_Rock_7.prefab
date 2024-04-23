@@ -184,7 +184,7 @@ GameObject:
   - component: {fileID: 7775722881970224047}
   m_Layer: 0
   m_Name: Magical_Rock_7
-  m_TagString: Untagged
+  m_TagString: Field
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

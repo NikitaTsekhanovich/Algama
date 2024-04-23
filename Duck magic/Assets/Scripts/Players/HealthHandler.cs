@@ -1,3 +1,4 @@
+using GameObjects.MagicStones;
 using Interfaces;
 using UnityEngine;
 using UnityEngine.UI;
@@ -18,19 +19,30 @@ namespace Players
 
         public void OnEnable()
         {
-            MagicBall.OnDamagePlayer += ChangeHealth;
+            MagicBall.OnDamagePlayer += GetDamage;
+            HealerStone.OnTreatmentPlayer += GetTreatment;
         }
 
         public void OnDisable()
         {
-            MagicBall.OnDamagePlayer -= ChangeHealth;
+            MagicBall.OnDamagePlayer -= GetDamage;
+            HealerStone.OnTreatmentPlayer -= GetTreatment;
         }
 
-        private void ChangeHealth(float damage, int id)
+        private void GetDamage(float damage, int id)
         {
             if (_settingPlayerNetwork.View.InstantiationId == id)
             {
                 _health -= damage / 100f;
+                _healthBar.fillAmount = _health;
+            }
+        }
+
+        private void GetTreatment(float heal, int id)
+        {
+            if (_settingPlayerNetwork.View.InstantiationId == id && _health < 1)
+            {
+                _health += heal / 100f;
                 _healthBar.fillAmount = _health;
             }
         }
