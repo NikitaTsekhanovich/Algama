@@ -10,14 +10,14 @@ namespace GameObjects.MagicStones
         [SerializeField] private HealerStoneInfo _healerStoneInfo;
         private int _numberPlayers;
         
-        public static Action<float, int> OnTreatmentPlayer;
-        
+        public static Action<float, PhotonView> OnHealPlayer;
+
         private void OnTriggerEnter2D(Collider2D other)
         {
             if (other.gameObject.CompareTag("Player") && other.GetComponent<PhotonView>().IsMine)
             {
                 _numberPlayers += 1;
-                StartCoroutine(OnStay(other.GetComponent<PhotonView>().InstantiationId));
+                StartCoroutine(OnStay(other.GetComponent<PhotonView>()));
             }
         }
 
@@ -29,11 +29,11 @@ namespace GameObjects.MagicStones
             }
         }
 
-        private IEnumerator OnStay(int playerId)
+        private IEnumerator OnStay(PhotonView playerView)
         {
             while (_numberPlayers > 0)
             {
-                OnTreatmentPlayer?.Invoke(_healerStoneInfo.HealPerSecond, playerId);
+                OnHealPlayer?.Invoke(_healerStoneInfo.HealPerSecond, playerView);
                 yield return new WaitForSeconds(1f);
             }
         }
