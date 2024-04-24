@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6971a5b4e962644ea7117eec9c4ac09, type: 3}
+  m_Name: Big healer stone
+  m_EditorClassIdentifier: 
+  _healPerSecond: 5
+  magicStoneTypes: 0
+  _prefab: {fileID: 704637196400176547, guid: 08ada9b58db31644e97f9a391a1ab829, type: 3}
+  _name: BigHealerStone

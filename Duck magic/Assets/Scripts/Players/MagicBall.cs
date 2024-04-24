@@ -11,7 +11,7 @@ namespace Players
         
         private bool _isLeftDirection;
         
-        public static Action<float, int> OnDamagePlayer;
+        public static Action<float, PhotonView> OnDamagePlayer;
 
         private void Update()
         {
@@ -25,14 +25,17 @@ namespace Players
             }
         }
 
-        private void OnTriggerEnter2D(Collider2D coll)
+        private void OnTriggerEnter2D(Collider2D other)
         {
-            if (coll.gameObject.CompareTag("Player"))
+            if (other.gameObject.CompareTag("Player"))
             {
-                OnDamagePlayer?.Invoke(_damage, coll.GetComponent<PhotonView>().InstantiationId);
+                OnDamagePlayer?.Invoke(_damage, other.GetComponent<PhotonView>());
             }
-            
-            Destroy(gameObject);
+
+            if (!other.gameObject.CompareTag("Field"))
+            {
+                Destroy(gameObject);
+            }
         }
 
         [PunRPC]
