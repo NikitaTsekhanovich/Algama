@@ -1,3 +1,4 @@
+using System;
 using GameObjects.MagicStones;
 using Interfaces;
 using Photon.Pun;
@@ -10,8 +11,9 @@ namespace Players
     {
         [SerializeField] private Image _healthBar;
         [SerializeField] private SettingPlayerNetwork _settingPlayerNetwork;
-        
         private float _health;
+
+        public static Action<string> OnDied;
 
         private void Start()
         {
@@ -48,6 +50,11 @@ namespace Players
         {
             _health -= damage / 100f;
             _healthBar.fillAmount = _health;
+            if (_health <= 0)
+            {
+                Destroy(gameObject);
+                OnDied?.Invoke(_settingPlayerNetwork.View.Owner.NickName);
+            }
         }
 
         [PunRPC]

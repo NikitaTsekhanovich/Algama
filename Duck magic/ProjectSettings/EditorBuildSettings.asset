@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Menu.unity
     guid: f26811fd613289940b231482dde71356
   - enabled: 1
-    path: Assets/Scenes/Game.unity
+    path: Assets/Scenes/Levels/FlyingStonesLevel.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/Levels/VillageLevel.unity
+    guid: 5893a916edb03fd4c866b61efc3eb8b4
   m_configObjects: {}

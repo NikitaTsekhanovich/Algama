@@ -28,7 +28,7 @@ namespace Menu.Services
         public void CreateRoom()
         {
             var roomOptions = new RoomOptions();
-            roomOptions.MaxPlayers = 2;
+            roomOptions.MaxPlayers = 4;
           
             if (!_validationRoomData.IsCorrectRoomName(_createRoomInput.text))
             {
