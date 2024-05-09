@@ -7,6 +7,7 @@ namespace Players
         [SerializeField] private PhysicsMovement _movement;
         [SerializeField] private PlayerAttack _playerAttack;
         [SerializeField] private SettingPlayerNetwork _settingPlayerNetwork;
+        [SerializeField] private HealthHandler _health;
 
         private void Update()
         {
@@ -21,7 +22,7 @@ namespace Players
                     _movement.CheckDirectionMove(true, _settingPlayerNetwork.View);
                 }
                 
-                if (Input.GetKeyDown(KeyCode.F))
+                if (Input.GetKeyDown(KeyCode.F) && _health.IsAlive)
                 {
                     _playerAttack.Attack();
                 }
@@ -31,7 +32,6 @@ namespace Players
                     _movement.Jump();
                 }
             }
-      
         }
 
         private void FixedUpdate()

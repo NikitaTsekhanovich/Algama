@@ -1,9 +1,7 @@
-using System;
 using Interfaces;
 using Photon.Pun;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 namespace Players
 {

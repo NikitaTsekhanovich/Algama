@@ -3,6 +3,7 @@ using Photon.Pun;
 using Photon.Realtime;
 using TMPro;
 using UnityEngine;
+using System;
 
 namespace Menu.Services
 {
@@ -12,6 +13,7 @@ namespace Menu.Services
         
         [SerializeField] private GameObject _lobby;
         [SerializeField] private GameObject _room;
+        [SerializeField] private GameObject _buttonsNavigate;
 
         [SerializeField] private TMP_InputField _createRoomInput;
         [SerializeField] private ValidationRoomData _validationRoomData;
@@ -19,6 +21,8 @@ namespace Menu.Services
         [SerializeField] private TMP_InputField _joinRoomInput;
         
         public static RoomService Instance;
+
+        public static Action OnReturnRoom;
 
         private void Awake()
         {
@@ -80,6 +84,13 @@ namespace Menu.Services
         public void LeaveRoom()
         {
             PhotonNetwork.LeaveRoom();
+        }
+
+        public void ReturnRoom()
+        {
+            _buttonsNavigate.SetActive(false);
+            _room.SetActive(true);
+            OnReturnRoom?.Invoke();
         }
     }
 }

@@ -1,18 +1,17 @@
 using System.Collections.Generic;
 using System.Linq;
-using Photon.Pun;
 using UnityEngine;
 using Random = System.Random;
 
 namespace GameLogic.LevelHandlers
 {
-    public class Levels : MonoBehaviourPunCallbacks
+    public class Levels : MonoBehaviour
     {
         [SerializeField] private List<string> _levels = new List<string>();
         protected Queue<string> currentLevels = new Queue<string>();
-        private const int MaxLevels = 2;
+        private const int MaxLevels = 3;
 
-        private void Start()
+        protected void CreateLevelsQueue()
         {
             var randomIndexes = ChooseRandomIndexes();
             ChooseRandomLevels(randomIndexes);

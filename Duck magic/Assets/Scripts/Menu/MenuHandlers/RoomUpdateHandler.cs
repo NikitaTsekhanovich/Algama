@@ -1,17 +1,36 @@
+using Interfaces;
 using Menu.Items;
+using Menu.Services;
 using Photon.Pun;
 using Photon.Realtime;
 using UnityEngine;
 
 namespace Menu.MenuHandlers
 {
-    public class RoomUpdateHandler : MonoBehaviourPunCallbacks
+    public class RoomUpdateHandler : MonoBehaviourPunCallbacks, IObserver
     {
         [SerializeField] private Transform _contentRoom;
         [SerializeField] private PlayerListItem _playerItem;
         [SerializeField] private GameObject _startGameButton;
 
+        public override void OnEnable()
+        {
+            base.OnEnable();
+            RoomService.OnReturnRoom += UpdateRoom;
+        }
+        
+        public override void OnDisable()
+        {
+            base.OnDisable();
+            RoomService.OnReturnRoom -= UpdateRoom;
+        }
+
         public override void OnJoinedRoom()
+        {
+            UpdateRoom();
+        }
+
+        private void UpdateRoom()
         {
             ClearPlayerList();
             FillPlayerList();

@@ -1,6 +1,9 @@
 using System;
+using System.Collections;
+using GameLogic.LevelHandlers;
 using GameObjects.MagicStones;
 using Interfaces;
+using Menu.Services;
 using Photon.Pun;
 using UnityEngine;
 using UnityEngine.UI;
@@ -11,13 +14,18 @@ namespace Players
     {
         [SerializeField] private Image _healthBar;
         [SerializeField] private SettingPlayerNetwork _settingPlayerNetwork;
+        [SerializeField] private GameObject _healthBarImage;
         private float _health;
+        private bool _isAlive;
 
-        public static Action<string> OnDied;
+        public bool IsAlive => _isAlive;
+        
+        public static Action<int, string, PhotonView> OnDiedPlayer;
 
         private void Start()
         {
             _health = _healthBar.fillAmount;
+            _isAlive = true;
         }
 
         public void OnEnable()
@@ -34,9 +42,10 @@ namespace Players
         
         private void OnDamage(float damage, PhotonView view)
         {
-            if (view.IsMine && _settingPlayerNetwork.View.InstantiationId == view.InstantiationId)
+            if (view.IsMine && 
+                _settingPlayerNetwork.View.InstantiationId == view.InstantiationId)
             {
-                view.RPC("GetDamage", RpcTarget.AllBuffered, damage);
+                view.RPC("GetDamage", RpcTarget.AllBuffered, damage, view.InstantiationId);
             }
         }
 
@@ -46,14 +55,15 @@ namespace Players
         }
 
         [PunRPC]
-        private void GetDamage(float damage)
+        private void GetDamage(float damage, int currentId)
         {
             _health -= damage / 100f;
             _healthBar.fillAmount = _health;
             if (_health <= 0)
             {
-                Destroy(gameObject);
-                OnDied?.Invoke(_settingPlayerNetwork.View.Owner.NickName);
+                _isAlive = false;
+                OnDiedPlayer?.Invoke(currentId, _settingPlayerNetwork.View.Owner.NickName, _settingPlayerNetwork.View);
+                _healthBarImage.SetActive(false);
             }
         }
 
