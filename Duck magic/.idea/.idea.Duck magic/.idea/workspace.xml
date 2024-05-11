@@ -3,40 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="9d3428c6-8c54-4e21-ac17-0c6f6b526172" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Duck magic/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Duck magic/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Images/Levels/CemeteryLevel/Environment/tileset-sliced.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Images/Levels/CemeteryLevel/Environment/tileset-sliced.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Images/Levels/CemeteryLevel/Environment/tileset.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Images/Levels/CemeteryLevel/Environment/tileset.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Images/Levels/VillageLevel/Pixel Art Platformer - Village Props/Tileset Palette/TP Ground.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Images/Levels/VillageLevel/Pixel Art Platformer - Village Props/Tileset Palette/TP Ground.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Images/Menu/Fonts/TMP/gomarice_rocks.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Images/Menu/Fonts/TMP/gomarice_rocks.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Images/Menu/Fonts/TMP/gomarice_rocks_purple.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Images/Menu/Fonts/TMP/gomarice_rocks_purple.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Images/Menu/Fonts/TMP/gomarice_rocks_white_outline.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Images/Menu/Fonts/TMP/gomarice_rocks_white_outline.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Images/Menu/Fonts/TMP/gomarice_rocks_yellow_outline_big.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Images/Menu/Fonts/TMP/gomarice_rocks_yellow_outline_big.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Photon/PhotonUnityNetworking/Resources/PhotonServerSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Photon/PhotonUnityNetworking/Resources/PhotonServerSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/MagicBall.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/MagicBall.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Player.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Levels/CemeteryLevel.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Levels/CemeteryLevel.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Levels/FlyingStonesLevel.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Levels/FlyingStonesLevel.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Levels/VillageLevel.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Levels/VillageLevel.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Menu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Menu.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Cameras.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Cameras/Camera.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Cameras/Camera.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameLogic/LevelHandlers/LevelLoader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameLogic/LevelHandlers/LevelLoader.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameLogic/LevelHandlers/Levels.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameLogic/LevelHandlers/Levels.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameLogic/PlayerDataHandlers.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameLogic/PlayerDataControllers.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameLogic/PlayerDataHandlers/PlayerDeathHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameLogic/PlayerDataControllers/PlayerDeathController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameLogic/PlayerDataHandlers/PlayerDeathHandler.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameLogic/PlayerDataControllers/PlayerDeathController.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameLogic/PlayerDataHandlers/PlayersScoreHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameLogic/PlayerDataControllers/PlayersScoreController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameLogic/PlayerDataHandlers/PlayersScoreHandler.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameLogic/PlayerDataControllers/PlayersScoreController.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Menu/MenuHandlers/RoomUpdateHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Menu/MenuHandlers/RoomUpdateHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Menu/Services/RoomService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Menu/Services/RoomService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Players/HealthHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Players/HealthHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Players/KeyboardInput.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Players/KeyboardInput.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Players/SettingPlayerNetwork.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Players/SettingPlayerNetwork.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Spawners/SpawnPlayers.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Spawners/SpawnerPlayers.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Spawners/SpawnPlayers.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Spawners/SpawnerPlayers.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2022.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2022.dwlt" afterDir="false" />
     </list>
@@ -174,7 +140,8 @@
       <workItem from="1715093911290" duration="22000" />
       <workItem from="1715144395077" duration="11793000" />
       <workItem from="1715176359332" duration="14378000" />
-      <workItem from="1715234986688" duration="20622000" />
+      <workItem from="1715234986688" duration="25070000" />
+      <workItem from="1715428695007" duration="1346000" />
     </task>
     <servers />
   </component>
