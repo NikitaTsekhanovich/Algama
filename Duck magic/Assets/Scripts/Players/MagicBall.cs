@@ -31,8 +31,8 @@ namespace Players
             {
                 OnDamagePlayer?.Invoke(_damage, other.GetComponent<PhotonView>());
             }
-
-            if (!other.gameObject.CompareTag("Field"))
+            
+            if (!other.gameObject.CompareTag("Field") && !other.gameObject.CompareTag("DeadPlayer"))
             {
                 Destroy(gameObject);
             }

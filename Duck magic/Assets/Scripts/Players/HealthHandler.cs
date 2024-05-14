@@ -1,9 +1,6 @@
 using System;
-using System.Collections;
-using GameLogic.LevelHandlers;
 using GameObjects.MagicStones;
 using Interfaces;
-using Menu.Services;
 using Photon.Pun;
 using UnityEngine;
 using UnityEngine.UI;
@@ -20,7 +17,7 @@ namespace Players
 
         public bool IsAlive => _isAlive;
         
-        public static Action<int, string, PhotonView> OnDiedPlayer;
+        public static Action<int, string> OnDiedPlayer;
 
         private void Start()
         {
@@ -62,7 +59,7 @@ namespace Players
             if (_health <= 0)
             {
                 _isAlive = false;
-                OnDiedPlayer?.Invoke(currentId, _settingPlayerNetwork.View.Owner.NickName, _settingPlayerNetwork.View);
+                OnDiedPlayer?.Invoke(currentId, _settingPlayerNetwork.View.Owner.NickName);
                 _healthBarImage.SetActive(false);
             }
         }

@@ -1,4 +1,5 @@
 using System;
+using GameLogic.LevelHandlers;
 using Interfaces;
 using Photon.Pun;
 using PlayerMenu;
@@ -11,7 +12,7 @@ namespace GameLogic.PlayerDataControllers
     {
         private int _currentNumberPlayers;
 
-        public static Action<PhotonView> OnEndLevel;
+        public static Action OnEndLevel;
         public static Action<string, int> OnRecordPlayerScore;
 
         private void Awake()
@@ -31,13 +32,15 @@ namespace GameLogic.PlayerDataControllers
             PlayerMenuHandler.OnPlayerDisconnect += UpdateNumberPlayers;
         }
 
+
+
         private void UpdateNumberPlayers()
         {
             _currentNumberPlayers -= 1;
             Debug.Log(_currentNumberPlayers);
         }
 
-        private void DiedPlayer(string playerName, PhotonView view)
+        private void DiedPlayer(string playerName)
         {
             OnRecordPlayerScore?.Invoke(
                 playerName, 
@@ -47,11 +50,11 @@ namespace GameLogic.PlayerDataControllers
 
             if (_currentNumberPlayers <= 1)
             {
-                KillLastPlayer(view);
+                KillLastPlayer();
             }
         }
 
-        private void KillLastPlayer(PhotonView view)
+        private void KillLastPlayer()
         {
             var nickNameLastPlayer = GameObject
                 .FindGameObjectWithTag("Player")
@@ -63,7 +66,7 @@ namespace GameLogic.PlayerDataControllers
                 nickNameLastPlayer, 
                 PhotonNetwork.CurrentRoom.PlayerCount - _currentNumberPlayers);
 
-            OnEndLevel?.Invoke(view);
+            OnEndLevel?.Invoke();
         }
     }
 }

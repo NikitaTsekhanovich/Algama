@@ -5,9 +5,9 @@ using UnityEngine;
 
 namespace PlayerMenu
 {
-    public class InterfaceController : MonoBehaviour, IObserver
+    public class ButtonMenuController : MonoBehaviour, IObserver
     {
-        [SerializeField] private GameObject _interface;
+        [SerializeField] private GameObject _menuButton;
         
         public void OnEnable()
         {
@@ -25,12 +25,12 @@ namespace PlayerMenu
 
         private void OnInterface()
         {
-            _interface.SetActive(true);
+            _menuButton.SetActive(true);
         }
 
         private void OffInterface()
         {
-            _interface.SetActive(false);
+            _menuButton.SetActive(false);
         }
     }
 }

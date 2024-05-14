@@ -14,8 +14,7 @@ namespace Players
 
         private SpriteRenderer _currentSprite;
         
-        public static Action OnPLayersDied;
-        public static Action<string, PhotonView> OnDeathHandler;
+        public static Action<string> OnDeathHandler;
 
         private void Start()
         {
@@ -32,14 +31,14 @@ namespace Players
             HealthHandler.OnDiedPlayer -= Died;
         }
 
-        private void Died(int currentId, string playerName, PhotonView view)
+        private void Died(int currentId, string playerName)
         {
             if (_settingPlayerNetwork.View.InstantiationId == currentId)
             {
                 ChangeSprite();
                 ChangeNickName();
                 ChangeTag();
-                OnDeathHandler?.Invoke(_settingPlayerNetwork.View.Owner.NickName, _settingPlayerNetwork.View);
+                OnDeathHandler?.Invoke(_settingPlayerNetwork.View.Owner.NickName);
             }
         }
 
@@ -56,13 +55,7 @@ namespace Players
 
         private void ChangeTag()
         {
-            transform.gameObject.tag = "Field";
-        }
-        
-        [PunRPC]
-        private void DiedPlayersLastLevel()
-        {
-            OnPLayersDied?.Invoke();
+            transform.gameObject.tag = "DeadPlayer";
         }
     }
 }

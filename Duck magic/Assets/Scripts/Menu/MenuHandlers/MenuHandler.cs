@@ -13,7 +13,7 @@ namespace Menu.MenuHandlers
             PhotonNetwork.CurrentRoom.IsOpen = false;
             OnLoadLevel?.Invoke();
         }
-        
+
         public void QuitGame()
         {
             Application.Quit();

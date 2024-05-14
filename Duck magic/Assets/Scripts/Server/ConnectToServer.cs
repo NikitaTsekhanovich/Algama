@@ -1,5 +1,6 @@
 using UnityEngine;
 using Photon.Pun;
+using PlayerMenu;
 using TMPro;
 using UnityEngine.SceneManagement;
 
@@ -24,6 +25,7 @@ namespace Server
             if (isCorrectPlayerName)
             {
                 _buttonText.text = "Connecting...";
+                LoadingScreenController.instance.StartAnimationFade();
                 PhotonNetwork.ConnectUsingSettings();
             }
         }

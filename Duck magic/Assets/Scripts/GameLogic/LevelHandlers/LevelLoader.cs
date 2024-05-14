@@ -5,8 +5,9 @@ using Interfaces;
 using Menu.MenuHandlers;
 using Menu.Services;
 using Photon.Pun;
-using Players;
+using PlayerMenu;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace GameLogic.LevelHandlers
 {
@@ -21,20 +22,34 @@ namespace GameLogic.LevelHandlers
         {
             MenuHandler.OnLoadLevel += StartGame;
             PlayerDeathController.OnEndLevel += EndLevel;
-            DeathState.OnPLayersDied += EndGame;
+            SceneManager.sceneLoaded += OnSceneLoaded;
         }
 
         public void OnDisable()
         {
             MenuHandler.OnLoadLevel -= StartGame;
             PlayerDeathController.OnEndLevel -= EndLevel;
-            DeathState.OnPLayersDied -= EndGame;
+            SceneManager.sceneLoaded -= OnSceneLoaded;
+        }
+
+        private void OnSceneLoaded(Scene scene, LoadSceneMode loadSceneMode)
+        {
+            if (scene.name != "LoadingScene")
+            {
+                LoadingScreenController.instance.EndAnimationFade();
+            }
         }
 
         private void StartGame()
         {
             CreateLevelsQueue();
             StartLevel();
+        }
+        
+        [PunRPC]
+        private void StartLoadingScreen()
+        {
+            LoadingScreenController.instance.StartAnimationFade();
         }
 
         private void EndGame()
@@ -47,25 +62,32 @@ namespace GameLogic.LevelHandlers
             OnClearPlayersScore?.Invoke();
             OffPlayerInterface?.Invoke();
             
-            PhotonNetwork.LoadLevel("Menu");
-            PhotonNetwork.CurrentRoom.IsOpen = true;
-            
+            yield return new WaitForSeconds(2f);
+            if (PhotonNetwork.IsMasterClient)
+            {
+                PhotonNetwork.LoadLevel("Menu");
+                PhotonNetwork.CurrentRoom.IsOpen = true;
+            }
+
             yield return new WaitForSeconds(1f);
             RoomService.Instance.ReturnRoom();
         }
 
         private void StartLevel()
         {
+            base.photonView.RPC("StartLoadingScreen", RpcTarget.All);
+            PhotonGarbageCollector.FindUnnecessaryObjects();
+
             var currentLevel = currentLevels.Dequeue();
             PhotonNetwork.LoadLevel(currentLevel);
         }
 
-        private void EndLevel(PhotonView view)
+        private void EndLevel()
         {
-            StartCoroutine(ReloadLevel(view));
+            StartCoroutine(ReloadLevel());
         }
 
-        private IEnumerator ReloadLevel(PhotonView view)
+        private IEnumerator ReloadLevel()
         {
             OnPlayersScore?.Invoke();
             yield return new WaitForSeconds(5f);
@@ -79,9 +101,15 @@ namespace GameLogic.LevelHandlers
                 }
                 else
                 {
-                    view.RPC("DiedPlayersLastLevel", RpcTarget.All);
+                    base.photonView.RPC("DiedPlayersLastLevel", RpcTarget.All);
                 }
             }
+        }
+        
+        [PunRPC]
+        private void DiedPlayersLastLevel()
+        {
+            EndGame();
         }
     }
 }

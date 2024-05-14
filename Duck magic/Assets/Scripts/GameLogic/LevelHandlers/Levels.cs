@@ -1,11 +1,12 @@
 using System.Collections.Generic;
 using System.Linq;
+using Photon.Pun;
 using UnityEngine;
 using Random = System.Random;
 
 namespace GameLogic.LevelHandlers
 {
-    public class Levels : MonoBehaviour
+    public class Levels : MonoBehaviourPunCallbacks
     {
         [SerializeField] private List<string> _levels = new List<string>();
         protected Queue<string> currentLevels = new Queue<string>();

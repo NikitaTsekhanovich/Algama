@@ -8,6 +8,8 @@ TagManager:
   - Controllers
   - SpawnPoints
   - VirtualCamera
+  - DeadPlayer
+  - PlayerAbility
   layers:
   - Default
   - TransparentFX
