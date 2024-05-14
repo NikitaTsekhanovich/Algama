@@ -38,6 +38,7 @@ namespace Players
         {
             if (_settingPlayerNetwork.View.IsMine)
             {
+                _movement.GroundCheck();
                 _movement.ProcessInput();
             }
             else
