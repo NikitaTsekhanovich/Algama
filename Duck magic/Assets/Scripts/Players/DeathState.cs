@@ -13,11 +13,13 @@ namespace Players
         [SerializeField] private SettingPlayerNetwork _settingPlayerNetwork;
 
         private SpriteRenderer _currentSprite;
-        
+        private Animator _animator;
+
         public static Action<string> OnDeathHandler;
 
         private void Start()
         {
+            _animator = GetComponent<Animator>();
             _currentSprite = gameObject.GetComponent<SpriteRenderer>();
         }
 
@@ -44,6 +46,7 @@ namespace Players
 
         private void ChangeSprite()
         {
+            _animator.enabled = false;
             _currentSprite.sprite = _spriteDead;
             _currentSprite.color = new Color(255f, 255f, 255f, 0.9f);
         }

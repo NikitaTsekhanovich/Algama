@@ -25,12 +25,16 @@ namespace Players
 
         public SpriteRenderer SpriteRendererPlayer => _spriteRenderer;
 
+        private void Awake()
+        {
+            _animator = GetComponent<Animator>();
+            _rigidbody = gameObject.GetComponent<Rigidbody2D>();
+        }
+
         private void Start()
         {
             PhotonNetwork.SendRate = 20;
             PhotonNetwork.SerializationRate = 15;
-            _rigidbody = gameObject.GetComponent<Rigidbody2D>();
-            _animator = GetComponent<Animator>();
         }
 
         public void ProcessInput()
