@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 1923400955754734643}
   - component: {fileID: 1115871889037136567}
   - component: {fileID: 4627918083158724049}
+  - component: {fileID: 7907359501064742037}
   m_Layer: 7
   m_Name: MagicBall
   m_TagString: Untagged
@@ -158,7 +159,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4123759659218019493}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 91ccdaa21f0ce1f499c2067cc63511bb, type: 3}
   m_Name: 
@@ -204,3 +205,18 @@ MonoBehaviour:
   m_SynchronizeRotation: 0
   m_SynchronizeScale: 1
   m_UseLocal: 1
+--- !u!114 &7907359501064742037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4123759659218019493}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 667bfb3a98ac4ab18787f733fbde91cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <Lifetime>k__BackingField: 1
+  <MoveSpeed>k__BackingField: 250
+  <DamageOnPlayer>k__BackingField: 10

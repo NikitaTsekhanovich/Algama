@@ -7,7 +7,9 @@ namespace Players
     public class KeyboardInput : MonoBehaviour
     {
         [SerializeField] private PhysicsMovement _movement;
-        [SerializeField] private PlayerAttack _playerAttack;
+        // [SerializeField] private PlayerAttack _playerAttack;
+        [SerializeField] private Casting _casting;
+        [SerializeField] private Spelling _spelling;
 
         private PhotonView _view;
 
@@ -25,12 +27,37 @@ namespace Players
 
                 if (Input.GetKeyDown(KeyCode.F))
                 {
-                    _playerAttack.Attack();
+                    _spelling.CastSpell();
                 }
 
                 if (Input.GetKeyDown(KeyCode.Space))
                 {
                     _movement.Jump();
+                }
+
+                if (Input.GetKeyDown(KeyCode.Q))
+                {
+                    _casting.CastElement(MagickElementSource.Wind);
+                }
+
+                if (Input.GetKeyDown(KeyCode.W))
+                {
+                    _casting.CastElement(MagickElementSource.Lightning);
+                }
+                
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    _casting.CastElement(MagickElementSource.Fire);
+                }
+                
+                if (Input.GetKeyDown(KeyCode.S))
+                {
+                    _casting.CastElement(MagickElementSource.Shield);
+                }
+
+                if (Input.GetKeyDown(KeyCode.D))
+                {
+                    _casting.CastElement(MagickElementSource.Earth);
                 }
             }
         }

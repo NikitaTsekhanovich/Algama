@@ -1,3 +1,5 @@
+using System;
+using System.Reflection;
 using Interfaces;
 using UnityEngine;
 using UnityEngine.UI;
@@ -18,17 +20,17 @@ namespace Players
             _view = GetComponent<PhotonView>();
         }
 
-        public void OnEnable()
-        {
-            MagicBall.OnDamagePlayer += ChangeHealth;
-        }
+        // public void OnEnable()
+        // {
+        //     MagicBall.OnDamagePlayer += ChangeHealth;
+        // }
+        //
+        // public void OnDisable()
+        // {
+        //     MagicBall.OnDamagePlayer -= ChangeHealth;
+        // }
 
-        public void OnDisable()
-        {
-            MagicBall.OnDamagePlayer -= ChangeHealth;
-        }
-
-        private void ChangeHealth(int damage, int id)
+        public void ChangeHealth(float damage, int id)
         {
             if (_view.InstantiationId == id)
             {
