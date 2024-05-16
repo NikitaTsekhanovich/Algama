@@ -25,7 +25,7 @@ namespace Server
             if (isCorrectPlayerName)
             {
                 _buttonText.text = "Connecting...";
-                LoadingScreenController.instance.StartAnimationFade();
+                LoadingScreenController.Instance.StartAnimationFade();
                 PhotonNetwork.ConnectUsingSettings();
             }
         }

@@ -19,11 +19,12 @@ namespace PlayerMenu
 
         private IEnumerator LoadMenuScene()
         {
+            LoadingScreenController.Instance.StartAnimationFade();
+            OffPlayerInterface?.Invoke();
             yield return new WaitForSeconds(1f);
             SceneManager.LoadScene("Menu");
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(1f);
             RoomService.Instance.LeaveRoom();
-            OffPlayerInterface?.Invoke();
         }
     }
 }

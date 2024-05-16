@@ -11,23 +11,22 @@ namespace PlayerMenu
         [SerializeField] private TextMeshProUGUI _progressText;
         private Image _background;
         
-        public static LoadingScreenController instance;
+        public static LoadingScreenController Instance;
 
         private void Start()
         {
-            instance = this;
+            Instance = this;
             _background = _loadingScreen.GetComponent<Image>();
         }
-        
+
         public void StartAnimationFade()
         {
-            // gameObject.GetComponent<Image>().raycastTarget = true;
             _loadingScreen.SetActive(true);
 
             DOTween.Sequence()
-                .Append(_background.DOFade(1f, 0.5f));
+                .Append(_background.DOFade(1f, 0.4f));
         }
-        
+
         public void EndAnimationFade()
         {
             DOTween.Sequence()

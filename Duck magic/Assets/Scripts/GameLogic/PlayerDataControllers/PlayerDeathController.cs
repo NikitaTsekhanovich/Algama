@@ -1,5 +1,4 @@
 using System;
-using GameLogic.LevelHandlers;
 using Interfaces;
 using Photon.Pun;
 using PlayerMenu;
@@ -31,8 +30,6 @@ namespace GameLogic.PlayerDataControllers
             DeathState.OnDeathHandler -= DiedPlayer;
             PlayerMenuHandler.OnPlayerDisconnect += UpdateNumberPlayers;
         }
-
-
 
         private void UpdateNumberPlayers()
         {

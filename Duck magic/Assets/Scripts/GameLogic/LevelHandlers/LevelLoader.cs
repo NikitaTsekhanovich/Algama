@@ -36,7 +36,7 @@ namespace GameLogic.LevelHandlers
         {
             if (scene.name != "LoadingScene")
             {
-                LoadingScreenController.instance.EndAnimationFade();
+                LoadingScreenController.Instance.EndAnimationFade();
             }
         }
 
@@ -49,9 +49,10 @@ namespace GameLogic.LevelHandlers
         [PunRPC]
         private void StartLoadingScreen()
         {
-            LoadingScreenController.instance.StartAnimationFade();
+            LoadingScreenController.Instance.StartAnimationFade();
         }
 
+        [PunRPC]
         private void EndGame()
         {
             StartCoroutine(ReturnLobby());
@@ -61,22 +62,23 @@ namespace GameLogic.LevelHandlers
         {
             OnClearPlayersScore?.Invoke();
             OffPlayerInterface?.Invoke();
-            
-            yield return new WaitForSeconds(2f);
+            base.photonView.RPC("StartLoadingScreen", RpcTarget.All);
+
+            yield return new WaitForSeconds(1f);
             if (PhotonNetwork.IsMasterClient)
             {
                 PhotonNetwork.LoadLevel("Menu");
                 PhotonNetwork.CurrentRoom.IsOpen = true;
             }
-
-            yield return new WaitForSeconds(1f);
+            
+            yield return new WaitForSeconds(0.2f);
             RoomService.Instance.ReturnRoom();
         }
 
         private void StartLevel()
         {
             base.photonView.RPC("StartLoadingScreen", RpcTarget.All);
-            PhotonGarbageCollector.FindUnnecessaryObjects();
+            // PhotonGarbageCollector.FindUnnecessaryObjects();
 
             var currentLevel = currentLevels.Dequeue();
             PhotonNetwork.LoadLevel(currentLevel);
@@ -101,15 +103,9 @@ namespace GameLogic.LevelHandlers
                 }
                 else
                 {
-                    base.photonView.RPC("DiedPlayersLastLevel", RpcTarget.All);
+                    base.photonView.RPC("EndGame", RpcTarget.All);
                 }
             }
-        }
-        
-        [PunRPC]
-        private void DiedPlayersLastLevel()
-        {
-            EndGame();
         }
     }
 }
