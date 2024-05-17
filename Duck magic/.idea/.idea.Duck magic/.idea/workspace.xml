@@ -3,14 +3,14 @@
   <component name="ChangeListManager">
     <list default="true" id="9d3428c6-8c54-4e21-ac17-0c6f6b526172" name="Changes" comment="add player animations">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Duck magic/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Duck magic/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Images/Menu/Fonts/TMP/gomarice_rocks.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Images/Menu/Fonts/TMP/gomarice_rocks.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/MagicBall.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/MagicBall.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Resources/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Player.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Menu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Menu.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Players/DeathState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Players/DeathState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Players/PhysicsMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Players/PhysicsMovement.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Players/HealthHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Players/HealthHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Players/KeyboardInput.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Players/KeyboardInput.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Players/MagicBall.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Players/MagicBall.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Spells/Properties/ICanDealDamage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Spells/Properties/ICanDealDamage.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Spells/Types/Missile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Spells/Types/Missile.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Spells/Types/Tornado.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Spells/Types/Tornado.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2022.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2022.dwlt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,6 +40,9 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2e8q3fNGepWJolY6kaP5HAkQAdT" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />

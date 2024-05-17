@@ -28,17 +28,17 @@ namespace Players
 
         public void OnEnable()
         {
-            MagicBall.OnDamagePlayer += OnDamage;
+            // MagicBall.OnDamagePlayer += OnDamage;
             HealerStone.OnHealPlayer += OnHeal;
         }
 
         public void OnDisable()
         {
-            MagicBall.OnDamagePlayer -= OnDamage;
+            // MagicBall.OnDamagePlayer -= OnDamage;
             HealerStone.OnHealPlayer -= OnHeal;
         }
         
-        private void OnDamage(float damage, PhotonView view)
+        public void OnDamage(float damage, PhotonView view)
         {
             if (view.IsMine && 
                 _settingPlayerNetwork.View.InstantiationId == view.InstantiationId)

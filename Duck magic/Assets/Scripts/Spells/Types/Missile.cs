@@ -32,13 +32,13 @@ namespace Spells.Types
 
             if (other.gameObject.CompareTag("Player"))
                 DealDamageTo(other.GetComponent<HealthHandler>(),
-                    other.GetComponent<PhotonView>().InstantiationId);
+                    other.GetComponent<PhotonView>());
         }
 
-        public void DealDamageTo<TPlayerHealth>(TPlayerHealth healthHandler, int playerId)
+        public void DealDamageTo<TPlayerHealth>(TPlayerHealth healthHandler, PhotonView view)
             where TPlayerHealth : HealthHandler
         {
-            healthHandler.ChangeHealth(DamageOnPlayer, playerId);
+            healthHandler.OnDamage(DamageOnPlayer, view);
         }
     }
 }

@@ -1,3 +1,4 @@
+using Photon.Pun;
 using Players;
 
 namespace Spells.Properties
@@ -7,7 +8,7 @@ namespace Spells.Properties
         public float DamageOnPlayer { get; set; }
         public float? DamageOnProp { get; set; }
 
-        public void DealDamageTo<TPlayerHealth>(TPlayerHealth healthHandler, int playerId)
+        public void DealDamageTo<TPlayerHealth>(TPlayerHealth healthHandler, PhotonView view)
             where TPlayerHealth : HealthHandler;
     }
 }
