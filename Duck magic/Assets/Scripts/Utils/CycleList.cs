@@ -12,7 +12,6 @@ namespace Utils
         public CycleList(int cycleCapacity)
         {
             _internalArray = new TItem[cycleCapacity];
-            Debug.Log(cycleCapacity);
         }
 
         public int Add(TItem item)

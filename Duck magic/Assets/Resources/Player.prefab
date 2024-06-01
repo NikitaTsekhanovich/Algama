@@ -919,7 +919,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _movement: {fileID: 6928280231440424045}
-  _playerAttack: {fileID: 3913371304660942275}
   _settingPlayerNetwork: {fileID: 8652689301091883203}
   _health: {fileID: -3939892839537029033}
   _casting: {fileID: 8573822999269074332}
