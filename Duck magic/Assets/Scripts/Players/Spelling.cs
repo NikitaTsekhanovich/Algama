@@ -8,6 +8,7 @@ namespace Players
     public class Spelling : MonoBehaviour
     {
         private Casting _casting;
+        private SpriteRenderer _shotDirection;
         
         [SerializeField] private GameObject missile;
         [SerializeField] private GameObject tornado;
@@ -15,13 +16,15 @@ namespace Players
         [SerializeField] private GameObject magickShield;
         [SerializeField] private GameObject stoneShield;
         
-        [SerializeField] private Transform throwPoint;
+        [SerializeField] private Transform rightThrowPoint;
+        [SerializeField] private Transform leftThrowPoint;
 
         private Dictionary<(Pattern, int), GameObject> _patternToSpell;
 
         private void Start()
         {
             _casting = GetComponent<Casting>();
+            _shotDirection = GetComponent<SpriteRenderer>();
 
             _patternToSpell = new()
             {
@@ -53,7 +56,16 @@ namespace Players
 
             if (candidate is not null)
             {
-                Instantiate(candidate, throwPoint.position, throwPoint.rotation);
+                if (!_shotDirection.flipX) 
+                {
+                    PhotonNetwork.Instantiate(candidate.name, rightThrowPoint.position, rightThrowPoint.rotation);
+                }
+                else
+                {
+                    var newSpell = PhotonNetwork.Instantiate(candidate.name, leftThrowPoint.position, leftThrowPoint.rotation);
+                    newSpell.transform.localScale *= -1;
+                }
+
                 Debug.Log($"Casting {candidate.name}");
             }
             else

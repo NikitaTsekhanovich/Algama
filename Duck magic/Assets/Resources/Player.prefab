@@ -718,7 +718,6 @@ GameObject:
   - component: {fileID: 5669135294199019840}
   - component: {fileID: 8652689301091883203}
   - component: {fileID: 6928280231440424045}
-  - component: {fileID: 3913371304660942275}
   - component: {fileID: 2598620460861076611}
   - component: {fileID: 7383836348593862567}
   - component: {fileID: -8120256843311151913}
@@ -956,22 +955,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   _spriteRenderer: {fileID: 3335118007151572366}
---- !u!114 &3913371304660942275
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8715964444649006852}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 982d1c6fe52a27f4f854cc81ac4cbfa5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _bullet: {fileID: 4123759659218019493, guid: b63b3fe4a0d38d241ad6cc8a86500a45, type: 3}
-  _throwPointRight: {fileID: 8857716213295833382}
-  _throwPointLeft: {fileID: 4498914684164076779}
-  _physicsMovement: {fileID: 6928280231440424045}
 --- !u!114 &2598620460861076611
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1112,4 +1095,5 @@ MonoBehaviour:
   earthbound: {fileID: 0}
   magickShield: {fileID: 0}
   stoneShield: {fileID: 0}
-  throwPoint: {fileID: 8857716213295833382}
+  rightThrowPoint: {fileID: 8857716213295833382}
+  leftThrowPoint: {fileID: 4498914684164076779}

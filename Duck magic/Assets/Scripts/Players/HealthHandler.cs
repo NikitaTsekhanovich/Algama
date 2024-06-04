@@ -28,13 +28,11 @@ namespace Players
 
         public void OnEnable()
         {
-            // MagicBall.OnDamagePlayer += OnDamage;
             HealerStone.OnHealPlayer += OnHeal;
         }
 
         public void OnDisable()
         {
-            // MagicBall.OnDamagePlayer -= OnDamage;
             HealerStone.OnHealPlayer -= OnHeal;
         }
         

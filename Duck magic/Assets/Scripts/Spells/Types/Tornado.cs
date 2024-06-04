@@ -31,11 +31,14 @@ namespace Spells.Types
         
         public void OnTriggerEnter2D(Collider2D other)
         {
-            Destroy(gameObject);
-
             if (other.gameObject.CompareTag("Player"))
                 DealDamageTo(other.GetComponent<HealthHandler>(),
                     other.GetComponent<PhotonView>());
+
+            if (!other.gameObject.CompareTag("Field") && !other.gameObject.CompareTag("DeadPlayer"))
+            {
+                Destroy(gameObject);
+            }
         }
 
         public void DealDamageTo<TPlayerHealth>(TPlayerHealth healthHandler, PhotonView view)
