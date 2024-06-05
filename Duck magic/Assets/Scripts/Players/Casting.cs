@@ -4,6 +4,7 @@ using System.Linq;
 using Spells;
 using UnityEngine;
 using Utils;
+using Photon.Pun;
 
 namespace Players
 {
@@ -11,6 +12,7 @@ namespace Players
     {
         private const int elementsCount = 3;
         private CycleList<GameObject> _elements;
+        protected PhotonView _photonView;
 
         [SerializeField] private GameObject FireElement;
         [SerializeField] private GameObject WaterElement;
@@ -20,12 +22,23 @@ namespace Players
 
         [SerializeField] private Transform ElementsHolder;
 
+        private void Start()
+        {
+            _photonView = GetComponent<PhotonView>();
+        }
+
         public Casting()
         {
             _elements = new CycleList<GameObject>(elementsCount);
         }
         
         public void CastElement(MagickElementSource source)
+        {
+            _photonView.RPC("SynchronizeCast", RpcTarget.All, source);
+        }
+
+        [PunRPC]
+        private void SynchronizeCast(MagickElementSource source)
         {
             GameObject magick = source switch
             {

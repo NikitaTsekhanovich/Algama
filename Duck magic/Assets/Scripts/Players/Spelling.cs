@@ -9,6 +9,7 @@ namespace Players
     {
         private Casting _casting;
         private SpriteRenderer _shotDirection;
+        private PhotonView _photonView;
         
         [SerializeField] private GameObject missile;
         [SerializeField] private GameObject tornado;
@@ -25,6 +26,7 @@ namespace Players
         {
             _casting = GetComponent<Casting>();
             _shotDirection = GetComponent<SpriteRenderer>();
+            _photonView = GetComponent<PhotonView>();
 
             _patternToSpell = new()
             {
@@ -73,6 +75,12 @@ namespace Players
                 Debug.Log("Oops, no combination for that :(");
             }
             
+            _photonView.RPC("SyncClearElements", RpcTarget.All);
+        }
+
+        [PunRPC]
+        private void SyncClearElements()
+        {
             _casting.ClearElements();
         }
     }

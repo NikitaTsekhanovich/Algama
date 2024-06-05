@@ -37,6 +37,7 @@ namespace Players
         {
             if (_settingPlayerNetwork.View.InstantiationId == currentId)
             {
+                _settingPlayerNetwork.View.RPC("SyncClearElements", RpcTarget.All);
                 ChangeSprite();
                 ChangeNickName();
                 ChangeTag();
