@@ -14,6 +14,7 @@ namespace Menu.Services
         [SerializeField] private GameObject _lobby;
         [SerializeField] private GameObject _room;
         [SerializeField] private GameObject _buttonsNavigate;
+        [SerializeField] private GameObject _blockInput;
 
         [SerializeField] private TMP_InputField _createRoomInput;
         [SerializeField] private ValidationRoomData _validationRoomData;
@@ -67,10 +68,12 @@ namespace Menu.Services
         {
             _lobby.SetActive(false);
             _room.SetActive(true);
+            _blockInput.SetActive(false);
         }
         
         public void JoinRoom(RoomInfo roomInfo)
         {
+            _blockInput.SetActive(true);
             _roomTitle.text = roomInfo.Name;
             PhotonNetwork.JoinRoom(roomInfo.Name);
         }

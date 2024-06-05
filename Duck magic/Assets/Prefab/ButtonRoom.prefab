@@ -92,7 +92,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 72
+  m_fontSize: 18
   m_fontSizeBase: 80
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -226,7 +226,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 72
+  m_fontSize: 18
   m_fontSizeBase: 80
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -417,5 +417,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _roomText: {fileID: 8141647797404078412}
   _countPlayersText: {fileID: 2597601694910959031}
-  _lobby: {fileID: 0}
-  _room: {fileID: 0}
