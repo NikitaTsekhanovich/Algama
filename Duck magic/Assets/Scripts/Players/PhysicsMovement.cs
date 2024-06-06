@@ -40,7 +40,12 @@ namespace Players
         public void ProcessInput()
         {
             var move = new Vector3(Input.GetAxisRaw(Axis.Horizontal), 0);
-            transform.position += move * _speed * Time.deltaTime;
+            
+            if (move.x != 0)
+                transform.position += move * _speed * Time.deltaTime;
+            else
+                _rigidbody.velocity = new Vector2(0, _rigidbody.velocity.y);
+
             _animator.SetFloat(MoveX, Mathf.Abs(move.x));
         }
 
