@@ -1,5 +1,5 @@
 using System;
-using GameObjects.MagicStones;
+using GameItems.SupportDealers;
 using System.Reflection;
 using Interfaces;
 using Photon.Pun;

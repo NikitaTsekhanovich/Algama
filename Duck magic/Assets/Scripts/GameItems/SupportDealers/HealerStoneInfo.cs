@@ -1,9 +1,9 @@
 using UnityEngine;
 using UnityEngine.Serialization;
 
-namespace GameObjects.MagicStones
+namespace GameItems.SupportDealers
 {
-    [CreateAssetMenu(fileName = "HealerStoneInfo", menuName = "Magic stones/ Healer stone")]
+    [CreateAssetMenu(fileName = "HealerStoneInfo", menuName = "Support items/ Healer stone")]
     public class HealerStoneInfo : ScriptableObject
     {
         [SerializeField] private float _healPerSecond;

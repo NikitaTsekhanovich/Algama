@@ -3,7 +3,7 @@ using System.Collections;
 using Photon.Pun;
 using UnityEngine;
 
-namespace GameObjects.MagicStones
+namespace GameItems.SupportDealers
 {
     public class HealerStone : MonoBehaviour
     {
