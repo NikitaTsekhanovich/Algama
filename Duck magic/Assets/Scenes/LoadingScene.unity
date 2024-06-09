@@ -1513,7 +1513,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 9e8863a14c8b04d44ac30157f3a64d9a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e62019705f138d64da966f7be572008d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1995,14 +1995,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: d870dc1f3bbb2e541b4c34332438539f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2309,8 +2309,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _levels:
-  - CemeteryLevel
   - FlyingStonesLevel
+  - CemeteryLevel
   - VillageLevel
 --- !u!114 &1636584448
 MonoBehaviour:
@@ -2325,8 +2325,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _levels:
-  - CemeteryLevel
   - FlyingStonesLevel
+  - CemeteryLevel
   - VillageLevel
 --- !u!1 &1698283851
 GameObject:
@@ -2508,7 +2508,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 33.5986, y: 3.8769}
+  m_AnchoredPosition: {x: 17, y: -394}
   m_SizeDelta: {x: 1052.8862, y: 181.8098}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1802078788

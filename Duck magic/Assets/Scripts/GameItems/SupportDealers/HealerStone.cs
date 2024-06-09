@@ -1,18 +1,19 @@
 using System;
 using System.Collections;
+using GameItems.Properties;
 using Photon.Pun;
 using UnityEngine;
 
 namespace GameItems.SupportDealers
 {
-    public class HealerStone : MonoBehaviour
+    public class HealerStone : MonoBehaviour, ICanCheckPlayer
     {
         [SerializeField] private HealerStoneInfo _healerStoneInfo;
         private int _numberPlayers;
         
         public static Action<float, PhotonView> OnHealPlayer;
 
-        private void OnTriggerEnter2D(Collider2D other)
+        public void OnTriggerEnter2D(Collider2D other)
         {
             if (other.gameObject.CompareTag("Player") && other.GetComponent<PhotonView>().IsMine)
             {
@@ -21,7 +22,7 @@ namespace GameItems.SupportDealers
             }
         }
 
-        private void OnTriggerExit2D(Collider2D other)
+        public void OnTriggerExit2D(Collider2D other)
         {
             if (other.gameObject.CompareTag("Player") && other.GetComponent<PhotonView>().IsMine)
             {

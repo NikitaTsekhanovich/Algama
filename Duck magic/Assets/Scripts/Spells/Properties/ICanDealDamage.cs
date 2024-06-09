@@ -1,5 +1,6 @@
 using Photon.Pun;
 using Players;
+using GameItems.DamageDealers.Dynamites;
 
 namespace Spells.Properties
 {
@@ -10,5 +11,8 @@ namespace Spells.Properties
 
         public void DealDamageTo<TPlayerHealth>(TPlayerHealth healthHandler, PhotonView view)
             where TPlayerHealth : HealthHandler;
+
+        public void DealDestroyTo<TDestroyableObject>(TDestroyableObject healthHandler, PhotonView view)
+            where TDestroyableObject : HealthHandlerItems;
     }
 }

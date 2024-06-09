@@ -2,6 +2,7 @@ using Photon.Pun;
 using Players;
 using Spells.Properties;
 using UnityEngine;
+using GameItems.DamageDealers.Dynamites;
 
 namespace Spells.Types
 {
@@ -30,7 +31,10 @@ namespace Spells.Types
         {
             if (other.gameObject.CompareTag("Player"))
                 DealDamageTo(other.GetComponent<HealthHandler>(),
-                    other.GetComponent<PhotonView>());
+                    other.GetComponent<PhotonView>());   
+            else if (other.gameObject.CompareTag("DestroyableObject"))
+                DealDestroyTo(other.GetComponent<HealthHandlerItems>(),
+                    other.GetComponent<PhotonView>());         
 
             if (!other.gameObject.CompareTag("Field") && !other.gameObject.CompareTag("DeadPlayer"))
             {
@@ -40,6 +44,12 @@ namespace Spells.Types
 
         public void DealDamageTo<TPlayerHealth>(TPlayerHealth healthHandler, PhotonView view)
             where TPlayerHealth : HealthHandler
+        {
+            healthHandler.OnDamage(DamageOnPlayer, view);
+        }
+
+        public void DealDestroyTo<TDestroyableObject>(TDestroyableObject healthHandler, PhotonView view) 
+            where TDestroyableObject : HealthHandlerItems
         {
             healthHandler.OnDamage(DamageOnPlayer, view);
         }

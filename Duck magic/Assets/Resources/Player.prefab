@@ -953,7 +953,7 @@ MonoBehaviour:
   _groundCheckRadius: 0.5
   _whatIsGround:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 384
   _spriteRenderer: {fileID: 3335118007151572366}
 --- !u!114 &2598620460861076611
 MonoBehaviour:

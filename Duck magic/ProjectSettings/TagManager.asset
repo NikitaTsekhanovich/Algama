@@ -10,6 +10,7 @@ TagManager:
   - VirtualCamera
   - DeadPlayer
   - PlayerAbility
+  - DestroyableObject
   layers:
   - Default
   - TransparentFX

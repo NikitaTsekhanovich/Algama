@@ -3,6 +3,7 @@ using Photon.Pun;
 using Players;
 using Spells.Properties;
 using UnityEngine;
+using GameItems.DamageDealers.Dynamites;
 
 namespace Spells.Types
 {
@@ -45,6 +46,12 @@ namespace Spells.Types
             where TPlayerHealth : HealthHandler
         {
             healthHandler.OnDamage(DamageOnPlayer, view);
+        }
+
+        public void DealDestroyTo<TDestroyableObject>(TDestroyableObject healthHandler, PhotonView view) 
+            where TDestroyableObject : HealthHandlerItems
+        {
+            throw new System.NotImplementedException();
         }
     }
 }
