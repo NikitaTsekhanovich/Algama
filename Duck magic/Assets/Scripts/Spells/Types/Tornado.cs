@@ -14,10 +14,12 @@ namespace Spells.Types
         
         public Vector2 Direction => new(transform.localScale.x, 0);
         public Rigidbody2D Rigidbody2D { get; set; }
-        
+
         [field: SerializeField] public float DamageOnPlayer { get; set; }
-        [field: SerializeField ]public float? DamageOnProp { get; set; }
-        
+        [field: SerializeField] public float? DamageOnProp { get; set; }
+
+        private readonly HashSet<Collider2D> _alreadyHit = new();
+
         private void Start()
         {
             base.Start();
@@ -32,14 +34,23 @@ namespace Spells.Types
         
         public void OnTriggerEnter2D(Collider2D other)
         {
-            if (other.gameObject.CompareTag("Player"))
-                DealDamageTo(other.GetComponent<HealthHandler>(),
+            if (other.gameObject.CompareTag("Player") && !_alreadyHit.Contains(other))
+            {
+                DealDamageTo(other.GetComponent<HealthHandler>(), 
                     other.GetComponent<PhotonView>());
-
-            if (!other.gameObject.CompareTag("Field") && !other.gameObject.CompareTag("DeadPlayer"))
+                _alreadyHit.Add(other);
+            }
+            
+            if (LayerMask.LayerToName(other.gameObject.layer) == "Ground")
             {
                 Destroy(gameObject);
             }
+        }
+
+        public void OnTriggerExit2D(Collider2D other)
+        {
+            if (other.gameObject.CompareTag("Player"))
+                _alreadyHit.Remove(other);
         }
 
         public void DealDamageTo<TPlayerHealth>(TPlayerHealth healthHandler, PhotonView view)
@@ -51,7 +62,7 @@ namespace Spells.Types
         public void DealDestroyTo<TDestroyableObject>(TDestroyableObject healthHandler, PhotonView view) 
             where TDestroyableObject : HealthHandlerItems
         {
-            throw new System.NotImplementedException();
+            healthHandler.OnDamage(DamageOnPlayer, view);
         }
     }
 }
