@@ -71,7 +71,7 @@ namespace GameLogic.LevelHandlers
                 PhotonNetwork.CurrentRoom.IsOpen = true;
             }
             
-            yield return new WaitForSeconds(0.2f);
+            yield return new WaitForSeconds(0.5f);
             RoomService.Instance.ReturnRoom();
         }
 

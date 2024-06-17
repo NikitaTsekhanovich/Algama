@@ -65,7 +65,7 @@ namespace Players
                 else
                 {
                     var newSpell = PhotonNetwork.Instantiate(candidate.name, leftThrowPoint.position, leftThrowPoint.rotation);
-                    newSpell.transform.localScale *= -1;
+                    newSpell.transform.localScale = new Vector3(-newSpell.transform.localScale.x, newSpell.transform.localScale.y, newSpell.transform.localScale.z);
                 }
 
                 Debug.Log($"Casting {candidate.name}");
