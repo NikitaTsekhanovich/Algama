@@ -10,6 +10,8 @@ namespace PlayerMenu
     {
         public static Action OffPlayerInterface;
         public static Action OnPlayerDisconnect;
+        public static Action OnMenuMusic;
+        public static Action OffGameMusic;
         
         public void BackToMenu()
         {
@@ -19,12 +21,14 @@ namespace PlayerMenu
 
         private IEnumerator LoadMenuScene()
         {
+            OffGameMusic?.Invoke();
             LoadingScreenController.Instance.StartAnimationFade();
             OffPlayerInterface?.Invoke();
             yield return new WaitForSeconds(1f);
             SceneManager.LoadScene("Menu");
             yield return new WaitForSeconds(1f);
             RoomService.Instance.LeaveRoom();
+            OnMenuMusic?.Invoke();
         }
     }
 }

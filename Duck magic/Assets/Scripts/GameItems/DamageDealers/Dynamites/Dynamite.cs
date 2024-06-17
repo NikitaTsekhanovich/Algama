@@ -1,10 +1,8 @@
-using System.Collections;
 using System.Collections.Generic;
 using GameItems.Properties;
 using UnityEngine;
 using Photon.Pun;
 using Interfaces;
-using System;
 
 namespace GameItems.DamageDealers.Dynamites
 {
@@ -12,6 +10,7 @@ namespace GameItems.DamageDealers.Dynamites
     {
         [SerializeField] private DamagerData _damagerData;
         [SerializeField] private GameObject _animExplosion;
+        [SerializeField] private DynamiteSounds _dynamiteSounds;
         private Dictionary<int, GameObject> _playersInRange = new();
         private PhotonView _photonView;
         private SpriteRenderer _spriteRender;
@@ -50,6 +49,7 @@ namespace GameItems.DamageDealers.Dynamites
 
         private void DoDestruction()
         {
+            _dynamiteSounds.ExplosionSound.Play();
             _boxCollider.enabled = false;
             _spriteRender.enabled = false;
             _animExplosion.SetActive(true);

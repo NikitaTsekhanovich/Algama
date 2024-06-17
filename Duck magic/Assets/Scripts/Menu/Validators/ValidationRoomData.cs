@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 
 namespace Menu.Validators
@@ -5,6 +6,7 @@ namespace Menu.Validators
     public class ValidationRoomData : MonoBehaviour
     {
         [SerializeField] private GameObject _errorInputRoomWindow;
+        [SerializeField] private TMP_Text _errorText;
         
         public bool IsCorrectRoomName(string roomName)
         {

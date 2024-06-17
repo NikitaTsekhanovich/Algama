@@ -28,7 +28,7 @@ namespace Players
         private void Awake()
         {
             _animator = GetComponent<Animator>();
-            _rigidbody = gameObject.GetComponent<Rigidbody2D>();
+            _rigidbody = GetComponent<Rigidbody2D>();
         }
 
         private void Start()

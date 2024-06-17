@@ -17,6 +17,10 @@ namespace GameLogic.LevelHandlers
         public static Action OffPlayersScore;
         public static Action OffPlayerInterface;
         public static Action OnClearPlayersScore;
+        public static Action OnMenuMusic;
+        public static Action OffMenuMusic;
+        public static Action OnGameMusic;
+        public static Action OffGameMusic;
 
         public void OnEnable()
         {
@@ -37,6 +41,17 @@ namespace GameLogic.LevelHandlers
             if (scene.name != "LoadingScene")
             {
                 LoadingScreenController.Instance.EndAnimationFade();
+                
+                if (scene.name != "Menu")
+                {
+                    OffMenuMusic?.Invoke();
+                    OnGameMusic?.Invoke();
+                }
+                else
+                {
+                    OffGameMusic?.Invoke();
+                    OnMenuMusic?.Invoke();
+                }
             }
         }
 
