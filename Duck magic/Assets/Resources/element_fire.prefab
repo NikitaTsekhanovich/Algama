@@ -48,6 +48,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   source: 0
   density: 1
+  manaCost: 7
 --- !u!212 &-6511872342901136419
 SpriteRenderer:
   m_ObjectHideFlags: 0

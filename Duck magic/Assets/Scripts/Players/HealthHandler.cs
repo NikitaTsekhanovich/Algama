@@ -1,6 +1,6 @@
 using System;
+using System.Collections;
 using GameItems.SupportDealers;
-using System.Reflection;
 using Interfaces;
 using Photon.Pun;
 using UnityEngine;
@@ -11,18 +11,25 @@ namespace Players
     public class HealthHandler : MonoBehaviourPunCallbacks, IObserver, IPunObservable
     {
         [SerializeField] private Image _healthBar;
+        [SerializeField] private Image _manaBar;
         [SerializeField] private SettingPlayerNetwork _settingPlayerNetwork;
         [SerializeField] private GameObject _healthBarImage;
+        [SerializeField] private GameObject _manaBarImage;
         private float _health;
+        private float _manaRegen = 1f;
+        private const float _maxMana = 1f;
         private bool _isAlive;
+        public float Mana { get; set; }
 
         public bool IsAlive => _isAlive;
-        
+
         public static Action<int, string> OnDiedPlayer;
 
         private void Start()
         {
+            StartCoroutine(RegenMana());
             _health = _healthBar.fillAmount;
+            Mana = _healthBar.fillAmount;
             _isAlive = true;
         }
 
@@ -35,10 +42,30 @@ namespace Players
         {
             HealerStone.OnHealPlayer -= OnHeal;
         }
-        
+
+        public void OnCast(float manaCost, PhotonView view)
+        {
+            view.RPC("GetManaUsage", RpcTarget.AllBuffered, manaCost);
+        }
+
+        [PunRPC]
+        private void GetManaUsage(float manaUsage)
+        {
+            Mana -= manaUsage;
+            _manaBar.fillAmount = Mana;
+            if (Mana <= 0)
+                Mana = 0;
+
+            if (Mana <= 10)
+                _manaRegen = 0.5f;
+
+            if (Mana > 75)
+                _manaRegen = 1f;
+        }
+
         public void OnDamage(float damage, PhotonView view)
         {
-            if (view.IsMine && 
+            if (view.IsMine &&
                 _settingPlayerNetwork.View.InstantiationId == view.InstantiationId)
             {
                 view.RPC("GetDamage", RpcTarget.AllBuffered, damage, view.InstantiationId);
@@ -60,6 +87,7 @@ namespace Players
                 _isAlive = false;
                 OnDiedPlayer?.Invoke(currentId, _settingPlayerNetwork.View.Owner.NickName);
                 _healthBarImage.SetActive(false);
+                _manaBarImage.SetActive(false);
             }
         }
 
@@ -82,6 +110,16 @@ namespace Players
             else
             {
                 _healthBar.fillAmount = (float)stream.ReceiveNext();
+            }
+        }
+
+        private IEnumerator RegenMana()
+        {
+            while (true)
+            {
+                Mana = Math.Min(Mana + _manaRegen / 100f, _maxMana);
+                _manaBar.fillAmount = Mana;
+                yield return new WaitForSeconds(0.1f);
             }
         }
     }
