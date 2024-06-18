@@ -1268,7 +1268,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   missile: {fileID: 1733122687084018675, guid: 5665d93c539559647804fa5a0e5189ca, type: 3}
-  tornado: {fileID: 0}
+  tornado: {fileID: 5301140702369575192, guid: 6b34a1167cd289e428275e68f5779215, type: 3}
   earthbound: {fileID: 0}
   magickShield: {fileID: 0}
   stoneShield: {fileID: 0}

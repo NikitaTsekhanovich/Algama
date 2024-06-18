@@ -82,7 +82,7 @@ namespace Players
         {
             _health -= damage / 100f;
             _healthBar.fillAmount = _health;
-            if (_health <= 0)
+            if (_health <= 0 && _isAlive)
             {
                 _isAlive = false;
                 OnDiedPlayer?.Invoke(currentId, _settingPlayerNetwork.View.Owner.NickName);

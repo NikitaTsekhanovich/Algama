@@ -4,6 +4,7 @@ using Players;
 using Spells.Properties;
 using UnityEngine;
 using GameItems.DamageDealers.Dynamites;
+using System.Collections;
 
 namespace Spells.Types
 {
@@ -14,10 +15,12 @@ namespace Spells.Types
         
         public Vector2 Direction => new(transform.localScale.x, 0);
         public Rigidbody2D Rigidbody2D { get; set; }
-        
+
         [field: SerializeField] public float DamageOnPlayer { get; set; }
-        [field: SerializeField ]public float? DamageOnProp { get; set; }
-        
+        [field: SerializeField] public float? DamageOnProp { get; set; }
+
+        private readonly HashSet<PhotonView> _alreadyHit = new();
+
         private void Start()
         {
             base.Start();
@@ -33,25 +36,45 @@ namespace Spells.Types
         public void OnTriggerEnter2D(Collider2D other)
         {
             if (other.gameObject.CompareTag("Player"))
-                DealDamageTo(other.GetComponent<HealthHandler>(),
+            {
+                DealDamageTo(other.GetComponent<HealthHandler>(), 
                     other.GetComponent<PhotonView>());
-
-            if (!other.gameObject.CompareTag("Field") && !other.gameObject.CompareTag("DeadPlayer"))
+            }
+            
+            if (LayerMask.LayerToName(other.gameObject.layer) == "Ground" && !other.CompareTag("DestroyableObject"))
             {
                 Destroy(gameObject);
             }
         }
 
+        public void OnTriggerExit2D(Collider2D other)
+        {
+            if (other.gameObject.CompareTag("Player"))
+                _alreadyHit.Remove(other.GetComponent<PhotonView>());
+        }
+
         public void DealDamageTo<TPlayerHealth>(TPlayerHealth healthHandler, PhotonView view)
             where TPlayerHealth : HealthHandler
         {
-            healthHandler.OnDamage(DamageOnPlayer, view);
+            _alreadyHit.Add(view);
+            StartCoroutine(DealPeriodicDamage(healthHandler));
+        }
+
+        private IEnumerator DealPeriodicDamage<TPlayerHealth>(TPlayerHealth healthHandler)
+            where TPlayerHealth : HealthHandler
+        {
+            while (true)
+            {
+                foreach (var view in _alreadyHit) 
+                    healthHandler.OnDamage(DamageOnPlayer, view);
+                yield return new WaitForSeconds(0.1f);
+            }
         }
 
         public void DealDestroyTo<TDestroyableObject>(TDestroyableObject healthHandler, PhotonView view) 
             where TDestroyableObject : HealthHandlerItems
         {
-            throw new System.NotImplementedException();
+            healthHandler.OnDamage(DamageOnPlayer, view);
         }
     }
 }

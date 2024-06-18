@@ -20,7 +20,7 @@ namespace Players
         private void Start()
         {
             _animator = GetComponent<Animator>();
-            _currentSprite = gameObject.GetComponent<SpriteRenderer>();
+            _currentSprite = GetComponent<SpriteRenderer>();
         }
 
         public void OnEnable()
@@ -41,8 +41,14 @@ namespace Players
                 ChangeSprite();
                 ChangeNickName();
                 ChangeTag();
+                ChangeLayer();
                 OnDeathHandler?.Invoke(_settingPlayerNetwork.View.Owner.NickName);
             }
+        }
+
+        private void ChangeLayer()
+        {
+            gameObject.layer = LayerMask.NameToLayer("DeadPlayer");
         }
 
         private void ChangeSprite()
