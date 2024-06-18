@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4eb1a48752fd2e347aa77def1984f8d5, type: 3}
   m_Name: Dynamit
   m_EditorClassIdentifier: 
-  _damage: 20
+  _damage: 30
   _health: 1

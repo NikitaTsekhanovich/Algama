@@ -52,7 +52,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <Lifetime>k__BackingField: 3
-  <MoveSpeed>k__BackingField: 5
+  <MoveSpeed>k__BackingField: 7
   <DamageOnPlayer>k__BackingField: 2
 --- !u!95 &4347331641258833508
 Animator:
@@ -115,7 +115,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 5
   m_Sprite: {fileID: 21300000, guid: 268195513d1b77c43a0ee5a7e54382e8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

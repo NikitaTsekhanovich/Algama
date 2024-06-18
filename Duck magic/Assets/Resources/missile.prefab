@@ -52,7 +52,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Lifetime>k__BackingField: 2
   <MoveSpeed>k__BackingField: 5
-  <DamageOnPlayer>k__BackingField: 10
+  <DamageOnPlayer>k__BackingField: 20
 --- !u!95 &824394659830545282
 Animator:
   serializedVersion: 5
