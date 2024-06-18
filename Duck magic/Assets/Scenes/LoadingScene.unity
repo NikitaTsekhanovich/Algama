@@ -1580,9 +1580,9 @@ MonoBehaviour:
   _menuAudio: {fileID: 1790003353}
   _gameAudio: {fileID: 2007414071}
   _gameMusics:
-  - {fileID: 8300000, guid: 8c1fcee5743dd6f44b39918a52ad1e06, type: 3}
   - {fileID: 8300000, guid: b00ed2d20b923c8419e6380155b61d60, type: 3}
   - {fileID: 8300000, guid: 911d465e8ddd64b48aa27aaffa38244f, type: 3}
+  - {fileID: 8300000, guid: 8c1fcee5743dd6f44b39918a52ad1e06, type: 3}
   - {fileID: 8300000, guid: e314d5afac11c0f4fad0af6e156cdace, type: 3}
   - {fileID: 8300000, guid: c9e1b131eb97de44cb0d37c222e95ccb, type: 3}
 --- !u!1 &1098384399

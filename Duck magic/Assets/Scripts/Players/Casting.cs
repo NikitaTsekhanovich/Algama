@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using System.Linq;
 using Spells;
 using UnityEngine;
@@ -31,7 +29,7 @@ namespace Players
         {
             _elements = new CycleList<GameObject>(elementsCount);
         }
-        
+
         public void CastElement(MagickElementSource source)
         {
             _photonView.RPC("SynchronizeCast", RpcTarget.All, source);
@@ -48,21 +46,23 @@ namespace Players
                 MagickElementSource.Shield => Instantiate(ShieldElement),
                 MagickElementSource.Earth => Instantiate(EarthElement)
             };
-            
+
             magick.transform.SetParent(ElementsHolder);
 
             var index = _elements.Add(magick);
             magick.transform.position = ElementsHolder.GetChild(index).transform.position;
         }
 
-        public Pattern CreateActivePattern()
+        public (Pattern currentPattern, float manaCost) CreateActivePattern()
         {
-            var elementsSources = _elements
+            var elements = _elements
                 .GetCastedElements()
-                .Select(e => e.GetComponent<MagickElement>().source)
+                .Select(e => e.GetComponent<MagickElement>())
                 .ToArray();
-            
-            return new Pattern(elementsSources);
+
+            var manaCost = elements.Sum(e => e.manaCost) / 100f;
+
+            return (new Pattern(elements.Select(e => e.source).ToArray()), manaCost);
         }
 
         public void ClearElements() => _elements.Clear();

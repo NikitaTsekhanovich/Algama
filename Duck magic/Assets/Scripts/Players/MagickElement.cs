@@ -21,5 +21,6 @@ namespace Players
     {
         [SerializeField] public MagickElementSource source;
         [SerializeField] public MagickElementDensity density;
+        [SerializeField] public float manaCost;
     }
 }
