@@ -29,8 +29,20 @@ PrefabInstance:
       value: 9000
       objectReference: {fileID: 0}
     - target: {fileID: 5868363559410049779, guid: c9da4569a4508df4f8933efaf1baa38a, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 70a6d98c6ce034e43b79bfaa3805fb06, type: 2}
+    - target: {fileID: 5868363559410049779, guid: c9da4569a4508df4f8933efaf1baa38a, type: 3}
       propertyPath: m_fontSizeMax
       value: 9000
+      objectReference: {fileID: 0}
+    - target: {fileID: 5868363559410049779, guid: c9da4569a4508df4f8933efaf1baa38a, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -5263338218149616523, guid: 70a6d98c6ce034e43b79bfaa3805fb06, type: 2}
+    - target: {fileID: 5868363559410049779, guid: c9da4569a4508df4f8933efaf1baa38a, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5957253263534660761, guid: c9da4569a4508df4f8933efaf1baa38a, type: 3}
       propertyPath: m_SizeDelta.x

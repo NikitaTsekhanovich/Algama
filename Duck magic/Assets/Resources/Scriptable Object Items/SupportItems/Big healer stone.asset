@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6971a5b4e962644ea7117eec9c4ac09, type: 3}
   m_Name: Big healer stone
   m_EditorClassIdentifier: 
-  _healPerSecond: 3
+  _healPerSecond: 2.5
   _magicStoneType: 0
   _name: BigHealerStone
