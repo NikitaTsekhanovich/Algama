@@ -7,7 +7,7 @@ using UnityEngine;
 
 namespace Menu.MenuHandlers
 {
-    public class RoomUpdateHandler : MonoBehaviourPunCallbacks, IObserver
+    public class RoomUpdateHandler : MonoBehaviourPunCallbacks
     {
         [SerializeField] private Transform _contentRoom;
         [SerializeField] private PlayerListItem _playerItem;

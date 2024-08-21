@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace PlayerMenu
 {
-    public class MenuController : MonoBehaviour, IObserver
+    public class MenuController : MonoBehaviour
     {
         [SerializeField] private GameObject _menuButton;
         

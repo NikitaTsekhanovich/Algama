@@ -1,7 +1,6 @@
 using System;
 using System.Collections;
 using GameLogic.PlayerDataControllers;
-using Interfaces;
 using Menu.MenuHandlers;
 using Menu.Services;
 using Photon.Pun;
@@ -11,7 +10,7 @@ using UnityEngine.SceneManagement;
 
 namespace GameLogic.LevelHandlers
 {
-    public class LevelLoader : Levels, IObserver
+    public class LevelLoader : Levels
     {
         public static Action OnPlayersScore;
         public static Action OffPlayersScore;
@@ -38,6 +37,7 @@ namespace GameLogic.LevelHandlers
 
         private void OnSceneLoaded(Scene scene, LoadSceneMode loadSceneMode)
         {
+            Debug.Log("Scene loaded!");
             if (scene.name != "LoadingScene")
             {
                 LoadingScreenController.Instance.EndAnimationFade();

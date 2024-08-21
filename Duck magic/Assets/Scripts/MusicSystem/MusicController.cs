@@ -7,7 +7,7 @@ using UnityEngine;
 
 namespace MusicSystem
 {
-    public class MusicController : MonoBehaviour, IObserver
+    public class MusicController : MonoBehaviour
     {
         [SerializeField] private AudioSource _menuAudio;
         [SerializeField] private AudioSource _gameAudio;

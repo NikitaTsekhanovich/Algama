@@ -7,7 +7,7 @@ using UnityEngine;
 
 namespace GameLogic.PlayerDataControllers
 {
-    public class PlayerDeathController : MonoBehaviour, IObserver
+    public class PlayerDeathController : MonoBehaviour
     {
         private int _currentNumberPlayers;
 

@@ -1,14 +1,13 @@
 using System;
 using System.Collections;
 using GameItems.SupportDealers;
-using Interfaces;
 using Photon.Pun;
 using UnityEngine;
 using UnityEngine.UI;
 
 namespace Players
 {
-    public class HealthHandler : MonoBehaviourPunCallbacks, IObserver, IPunObservable
+    public class HealthHandler : MonoBehaviourPunCallbacks, IPunObservable
     {
         [SerializeField] private Image _healthBar;
         [SerializeField] private Image _manaBar;

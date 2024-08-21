@@ -7,21 +7,22 @@ namespace PlayerMenu
 {
     public class LoadingScreenController : MonoBehaviour
     {
-        [SerializeField] private GameObject _loadingScreen;
-        [SerializeField] private TextMeshProUGUI _progressText;
-        private Image _background;
+        [SerializeField] private TextMeshProUGUI _loadingText;
+        [SerializeField] private Image _background;
         
         public static LoadingScreenController Instance;
 
-        private void Start()
-        {
-            Instance = this;
-            _background = _loadingScreen.GetComponent<Image>();
+        private void Start() 
+        {             
+            if (Instance == null) 
+                Instance = this; 
+            else if (Instance == this)
+                Destroy(gameObject); 
         }
 
         public void StartAnimationFade()
         {
-            _loadingScreen.SetActive(true);
+            _loadingText.DOFade(1f, 0.4f);
 
             DOTween.Sequence()
                 .Append(_background.DOFade(1f, 0.4f));
@@ -29,10 +30,10 @@ namespace PlayerMenu
 
         public void EndAnimationFade()
         {
+            _loadingText.DOFade(0f, 0.4f);
+
             DOTween.Sequence()
-                .Append(_background.DOFade(0f, 0.5f));
-            
-            _loadingScreen.SetActive(false);
+                .Append(_background.DOFade(0f, 0.4f));
         }
     }
 }

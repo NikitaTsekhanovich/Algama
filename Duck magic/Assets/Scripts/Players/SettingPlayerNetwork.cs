@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Players
 {
-    public class SettingPlayerNetwork : MonoBehaviourPunCallbacks, IObserver
+    public class SettingPlayerNetwork : MonoBehaviourPunCallbacks
     {
         [SerializeField] private TMP_Text _playerName;
         private PhotonView _view;
