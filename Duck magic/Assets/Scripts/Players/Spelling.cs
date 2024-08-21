@@ -65,6 +65,7 @@ namespace Players
 
                 healthHandler.OnCast(result.manaCost, GetComponent<PhotonView>());
 
+                Debug.Log(candidate);
                 if (!_shotDirection.flipX)
                 {
                     PhotonNetwork.Instantiate(candidate.name, rightThrowPoint.position, rightThrowPoint.rotation);
