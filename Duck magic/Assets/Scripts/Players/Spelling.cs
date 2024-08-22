@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using Photon.Pun;
 using Spells;
+using Spells.Types;
 using UnityEngine;
 
 namespace Players
@@ -21,6 +22,8 @@ namespace Players
         [SerializeField] private Transform leftThrowPoint;
 
         private Dictionary<(Pattern, int), GameObject> _patternToSpell;
+
+        private GameObject _candidate;
 
         private void Start()
         {
@@ -44,19 +47,19 @@ namespace Players
             if (result.currentPattern.Length == 0)
                 return;
 
-            GameObject candidate = null;
+            _candidate = null;
             var currentMaxPriority = 0;
 
             foreach (var ((pattern, priority), spellObject) in _patternToSpell)
             {
                 if (result.currentPattern.Equals(pattern) && priority > currentMaxPriority)
                 {
-                    candidate = spellObject;
+                    _candidate = spellObject;
                     currentMaxPriority = priority;
                 }
             }
 
-            if (candidate is not null)
+            if (_candidate is not null)
             {
                 var healthHandler = GetComponent<HealthHandler>();
                 var mana = healthHandler.Mana;
@@ -65,18 +68,22 @@ namespace Players
 
                 healthHandler.OnCast(result.manaCost, GetComponent<PhotonView>());
 
-                Debug.Log(candidate);
-                if (!_shotDirection.flipX)
+                if (_candidate.name == "EarthShield")
                 {
-                    PhotonNetwork.Instantiate(candidate.name, rightThrowPoint.position, rightThrowPoint.rotation);
+                    var earthShield = PhotonNetwork.Instantiate(_candidate.name, transform.position, Quaternion.identity);
+                    earthShield.transform.SetParent(transform);
+                }
+                else if (!_shotDirection.flipX)
+                {
+                    PhotonNetwork.Instantiate(_candidate.name, rightThrowPoint.position, rightThrowPoint.rotation);
                 }
                 else
                 {
-                    var newSpell = PhotonNetwork.Instantiate(candidate.name, leftThrowPoint.position, leftThrowPoint.rotation);
+                    var newSpell = PhotonNetwork.Instantiate(_candidate.name, leftThrowPoint.position, leftThrowPoint.rotation);
                     newSpell.transform.localScale = new Vector3(-newSpell.transform.localScale.x, newSpell.transform.localScale.y, newSpell.transform.localScale.z);
                 }
 
-                Debug.Log($"Casting {candidate.name}");
+                Debug.Log($"Casting {_candidate.name}");
             }
             else
             {
